@@ -3,11 +3,11 @@ package logic.gameComponents.gObject;
 import logic.gameComponents.GameComponent;
 import logic.gameComponents.gPanel.GPanel;
 import logic.moveLogic.Move;
-import logic.resources.loader.image.ImageLoader;
+import logic.resources.manager.ResManager;
 
 
 /**
- * Created by Nikita on 16.02.2016.
+ * Игровой обьект ноходящийся в клетку
  */
 public class GObject extends GameComponent {
     Move move;
@@ -17,7 +17,7 @@ public class GObject extends GameComponent {
 
     public GObject() {
         GPanel panel = new GPanel();
-        panel.setIdImage(2);
+        panel.setImageIcon(ResManager.getResManager().getImageIcon(2));
         setGPanel(panel);
 
     }

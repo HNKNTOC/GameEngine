@@ -3,7 +3,7 @@ package logic.gameComponents.gObject;
 import java.util.ArrayList;
 
 /**
- * Created by Nikita on 19.02.2016.
+ * Фабрика для GObject
  */
 public interface FactoryGObject {
     GObject createGObject();

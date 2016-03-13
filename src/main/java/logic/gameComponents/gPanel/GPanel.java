@@ -1,7 +1,7 @@
 package logic.gameComponents.gPanel;
-
-
 import logic.resources.manager.ResManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,30 +11,42 @@ import java.awt.*;
  * Настраивает JPanel для отрисовки GameComponent.
  */
 public class GPanel extends JPanel {
-    private int idImage;
+    private ImageIcon image;
+    private static final Logger logger = LogManager.getLogger(GPanel.class);
 
     public GPanel() {
-        idImage = 0;
+        image = ResManager.getResManager().getImageIcon(0);
+        logger.info("Create "+this.toString());
     }
 
-    public int getIdImage() {
-        return idImage;
+    public GPanel(ImageIcon image) {
+        this.image = image;
+        logger.info("Create "+this.toString());
     }
 
-    public void setIdImage(int idImage) {
-        this.idImage = idImage;
+    public ImageIcon getImageIcon() {
+        logger.debug("getImageIcon = "+image);
+        return image;
+    }
+
+    public void setImageIcon(ImageIcon image) {
+        this.image = image;
+        logger.debug("setImageIcon = "+image);
     }
 
     @Override
     protected void paintComponent(Graphics g) {
-        Image image = ResManager.getResManager().getImageIcon(idImage).getImage();
-        g.drawImage(image,0,0,getWidth(),getHeight(),null);
+        if (image!=null) {
+            g.drawImage(image.getImage(),0,0,getWidth(),getHeight(),null);
+        }else {
+            logger.warn("paintComponent image!=null");
+        }
     }
 
     @Override
     public String toString() {
         return "GPanel{" +
-                "idImage=" + idImage +
+                "image=" + image +
                 '}';
     }
 }

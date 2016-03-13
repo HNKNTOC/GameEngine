@@ -12,7 +12,7 @@ import javax.swing.*;
  * Каждый GameComponent должен иметь GPanel которая будет отображать этот GameComponent.
  */
 public abstract class GameComponent{
-    //private static final Logger logger = LogManager.getLogger(GameComponent.class);
+    private static final Logger logger = LogManager.getLogger(GameComponent.class);
     /**
      * Панель которая будет отображать игровой компонент.
      */
@@ -29,7 +29,7 @@ public abstract class GameComponent{
     public GameComponent() {
         generateId();
         gPanel = new GPanel();
-        //logger.info("Create "+this.toString());
+        logger.info("Create "+this.toString());
     }
 
     /**
@@ -39,7 +39,7 @@ public abstract class GameComponent{
     public GameComponent(GPanel gPanel) {
         generateId();
         this.gPanel = gPanel;
-        //logger.info("Create "+this.toString());
+        logger.info("Create "+this.toString());
     }
 
     public int getId() {
@@ -47,17 +47,18 @@ public abstract class GameComponent{
     }
 
     public JPanel getGPanel() {
-        //logger.debug(id+".getGPanel("+gPanel+")");
+        logger.debug("getGPanel "+gPanel);
         return gPanel;
     }
 
     public void setGPanel(GPanel gPanel) {
-        //logger.debug(id+".setGPanel("+gPanel+")");
+        logger.debug("setGPanel "+gPanel);
         this.gPanel = gPanel;
     }
 
     private void generateId(){
         id = GeneratorId.generateId();
+        logger.debug("generateId ="+id);
     }
 
     @Override

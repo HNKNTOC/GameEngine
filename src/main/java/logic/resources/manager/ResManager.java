@@ -1,5 +1,8 @@
 package logic.resources.manager;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import javax.swing.*;
 import java.util.HashMap;
 
@@ -8,6 +11,7 @@ import java.util.HashMap;
  * Обиночка
  */
 public class ResManager {
+    private static final Logger logger = LogManager.getLogger(ResManager.class);
     /**
      * Ссылка на себя.
      */
@@ -23,15 +27,18 @@ public class ResManager {
 
     private ResManager() {
         map = new HashMap<>();
+        logger.info("Create");
     }
 
     public ImageIcon getImageIcon(int id){
+        logger.debug("getImageIcon");
         return map.get(id);
     }
 
     public void putImageIcon(ImageIcon image){
         map.put(thisIdImageIcon,image);
         thisIdImageIcon++;
+        logger.debug("putImageIcon id="+thisIdImageIcon);
     }
 
     public static ResManager getResManager(){

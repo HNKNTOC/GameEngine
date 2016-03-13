@@ -3,6 +3,7 @@ package logic.gameComponents.gCell;
 
 import logic.gameComponents.gPanel.cell.GCellPanel;
 import logic.gameComponents.gPanel.cell.GCellPanelInf;
+import logic.resources.manager.ResManager;
 
 import java.util.ArrayList;
 
@@ -14,7 +15,7 @@ public class FactoryGCellDefault implements FactoryGCell {
     public GCell createGCell() {
         GCell gCell = new GCell();
         GCellPanel panel = new GCellPanelInf(gCell);
-        panel.setIdImage(1);
+        panel.setImageIcon(ResManager.getResManager().getImageIcon(1));
         gCell.setGPanel(panel);
         return gCell;
     }
