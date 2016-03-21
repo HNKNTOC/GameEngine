@@ -3,7 +3,11 @@ package logic.listeners.keyboard;
 
 
 
-import logic.moveLogic.Move;
+import logic.action.command.gObject.command.CommandMove;
+import logic.gameComponents.boardComponents.gObject.GObject;
+import logic.action.command.ReceiverAction;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -13,10 +17,11 @@ import java.awt.event.KeyListener;
  */
 public class KeyListenerMainPlayer implements KeyListener {
 
-    Move move;
+    private static final Logger logger = LogManager.getLogger(KeyListenerMainPlayer.class);
+    private GObject gObject;
 
-    public KeyListenerMainPlayer(Move move) {
-        this.move = move;
+    public KeyListenerMainPlayer(GObject gObject) {
+        this.gObject = gObject;
     }
 
     @Override
@@ -25,22 +30,25 @@ public class KeyListenerMainPlayer implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        System.out.println("Key=" + e.getKeyCode());
+        ReceiverAction receiver = gObject.getReceiverAction();
+        logger.debug("Click "+e.getKeyCode());
 
         switch (e.getKeyCode()) {
             case KeyEvent.VK_UP:
-                move.move(move.getX(),move.getY()-1);
+                receiver.setParameters(CommandMove.NAME_PARAMETER_ID_ACTION,CommandMove.ACTION_MOVE_UP,0);
                 break;
             case KeyEvent.VK_DOWN:
-                move.move(move.getX(), move.getY()+1);
+                receiver.setParameters(CommandMove.NAME_PARAMETER_ID_ACTION,CommandMove.ACTION_MOVE_DOWN,0);
                 break;
             case KeyEvent.VK_LEFT:
-                move.move(move.getX()-1, move.getY());
+                receiver.setParameters(CommandMove.NAME_PARAMETER_ID_ACTION,CommandMove.ACTION_MOVE_LEFT,0);
                 break;
             case KeyEvent.VK_RIGHT:
-                move.move(move.getX()+1,move.getY());
+                receiver.setParameters(CommandMove.NAME_PARAMETER_ID_ACTION,CommandMove.ACTION_MOVE_RIGHT,0);
                 break;
+            default: receiver.setParameters(CommandMove.NAME_PARAMETER_ID_ACTION,"0",0);
         }
+        receiver.executeCommand(0);
 
     }
 

@@ -2,6 +2,7 @@ package gui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyListener;
 import java.util.HashMap;
 
 /**
@@ -12,4 +13,5 @@ public interface Display {
     void update();
     void showPanel(JPanel jPanel);
     void setListImage(HashMap<Integer,Image> listImage);
+    void addKeyListener(KeyListener keyListener);
 }

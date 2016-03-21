@@ -1,15 +1,13 @@
 import gui.Display;
 import gui.JDisplay;
-import logic.gameComponents.boardComponents.FactoryGBoard;
-import logic.gameComponents.boardComponents.FactoryGBoardDefault;
-import logic.gameComponents.boardComponents.GBoard;
-import logic.gameComponents.gCell.FactoryGCell;
-import logic.gameComponents.gCell.FactoryGCellDefault;
-import logic.gameComponents.gCell.GCell;
-import logic.gameComponents.gObject.GObject;
-import logic.listeners.keyboard.KeyListenerMainPlayer;
+import logic.gameComponents.boardComponents.gBoard.FactoryGBoard;
+import logic.gameComponents.boardComponents.gBoard.FactoryGBoardDefault;
+import logic.gameComponents.boardComponents.gBoard.GBoard;
+import logic.gameComponents.boardComponents.gCell.FactoryGCell;
+import logic.gameComponents.boardComponents.gCell.FactoryGCellDefault;
+import logic.gameComponents.boardComponents.gCell.GCell;
+import logic.gameComponents.boardComponents.gObject.GObject;
 import logic.listeners.mouse.MouseListenerDefault;
-import logic.moveLogic.MoveObject;
 import logic.resources.loader.image.ImageLoader;
 import logic.resources.manager.ResManager;
 import org.junit.Test;
@@ -44,7 +42,7 @@ public class TestGamePanel {
         }
 
         GObject gObject = new GObject();
-        gObject.setMove(new MoveObject(gObject, gBoard.getListGCell()));
+        //gObject.setReceiverAction(new ReceiverActionObject(gObject, gBoard.getListGCell()));
         gBoard.getListGCell().get(3,3).setGObject(gObject);
 
 
@@ -53,7 +51,7 @@ public class TestGamePanel {
 
         frame.add(gBoard.getGPanel());
 
-        frame.addKeyListener(new KeyListenerMainPlayer(gObject.getMove()));
+        //frame.addKeyListener(new KeyListenerMainPlayer(gObject.getReceiverAction()));
 
         frame.addKeyListener(new KeyListener() {
             @Override

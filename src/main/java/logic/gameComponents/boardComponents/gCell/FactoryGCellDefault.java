@@ -1,4 +1,4 @@
-package logic.gameComponents.gCell;
+package logic.gameComponents.boardComponents.gCell;
 
 
 import logic.gameComponents.gPanel.cell.GCellPanel;

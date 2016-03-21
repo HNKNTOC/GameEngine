@@ -2,6 +2,8 @@ package gui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.HashMap;
 
 /**
@@ -13,6 +15,22 @@ public class JDisplay extends JFrame implements Display {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize(300,300);
         setLocationRelativeTo(null);
+        addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                repaint();
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
     }
 
     @Override
@@ -34,4 +52,7 @@ public class JDisplay extends JFrame implements Display {
     public void setListImage(HashMap<Integer, Image> listImage) {
 
     }
+
+
+
 }

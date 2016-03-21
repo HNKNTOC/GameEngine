@@ -1,6 +1,6 @@
 package logic.gameComponents.gPanel.cell;
 
-import logic.gameComponents.gCell.GCell;
+import logic.gameComponents.boardComponents.gCell.GCell;
 
 import java.awt.*;
 

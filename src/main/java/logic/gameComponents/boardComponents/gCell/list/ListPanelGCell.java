@@ -1,28 +1,28 @@
-package logic.gameComponents.boardComponents.list;
+package logic.gameComponents.boardComponents.gCell.list;
 
-import logic.gameComponents.gCell.GCell;
-
-import java.util.Iterator;
+import logic.gameComponents.GList;
 
 /**
  * Интерфейс для удобного хранения GCell.
  */
-public interface ListGCell {
-    /**
-     * Добавить новый gCell
-     * @param gCell который нужно добавить.
-     * @return false если добавить не получилось или массив переполнен.
-     */
-    boolean add(GCell gCell);
+public abstract class ListPanelGCell<GCell> extends GList<GCell>{
+
 
     /**
-     * Получить GCell.
+     * Добавляет GCell в список.
+     * @param gCell который нужно добавить.
+     * @return true если GCell был добавлен.
+     */
+     abstract public boolean add(GCell gCell);
+
+    /**
+     * Получить GCell по координатам.
      * @param x колонка в которой находится GCell.
      * @param y строка в которой находится GCell.
      * @return GCell который находится в заданной строке и линии.
      * Null если по заданным параметрам нету GCell.
      */
-    GCell get(int x, int y);
+    abstract public GCell get(int x, int y);
 
     /**
      * Установить GCell на заданную колонку и линию.
@@ -30,17 +30,17 @@ public interface ListGCell {
      * @param x колонка в которой нужно установить GCell.
      * @param y строка в которой нужно установить GCell.
      */
-    void set(GCell gCell, int x, int y);
+    abstract public void set(GCell gCell, int x, int y);
 
     /**
-     * Получить количество GCell.
-     * @return количество GCell находящихся в ManagerGCell.
+     * Максимум GCell по x.
+     * @return максимум GCell по x.
      */
-    int size();
-
-    int getMaxX();
-
-    int getMaxY();
-
-    Iterator<GCell> getIterator();
+    abstract public int getMaxX();
+    /**
+     * Максимум GCell по y.
+     * @return максимум GCell по y.
+     */
+    abstract public int getMaxY();
+    
 }

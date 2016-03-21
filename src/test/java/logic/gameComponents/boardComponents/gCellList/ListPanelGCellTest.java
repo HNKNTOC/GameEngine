@@ -1,8 +1,10 @@
-package logic.gameComponents.boardComponents.list;
+package logic.gameComponents.boardComponents.gCellList;
 
-import logic.gameComponents.boardComponents.GBoard;
-import logic.gameComponents.gCell.GCell;
-import logic.gameComponents.gObject.GObject;
+import logic.gameComponents.boardComponents.gBoard.GBoard;
+import logic.gameComponents.boardComponents.gCell.GCell;
+import logic.gameComponents.boardComponents.gCell.list.HashMapPanelGCell;
+import logic.gameComponents.boardComponents.gCell.list.ListPanelGCell;
+import logic.gameComponents.boardComponents.gObject.GObject;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -16,12 +18,12 @@ import static org.junit.Assert.*;
 /**
  * Created by Nikita on 16.02.2016.
  */
-public class ListGCellTest {
+public class ListPanelGCellTest {
     int maxX = 10;
     int maxY = 5;
     int size = maxX*maxY;
 
-    ListGCell managerGCell;
+    ListPanelGCell<GCell> managerGCell;
     GCell[][] gCells = new GCell[maxX][maxY];
 
     @BeforeClass
@@ -44,8 +46,8 @@ public class ListGCellTest {
             y=0;
             x++;
         }
-        //Создание ListGCell и наполнение его GCell из gCells
-        managerGCell = new HashMapGCell(maxX,maxY,new GBoard(maxX,maxY));
+        //Создание ListPanelGCell и наполнение его GCell из gCells
+        managerGCell = new HashMapPanelGCell(maxX,maxY);
 
         for(GCell[] list:gCells){
             for(GCell cell:list){
@@ -97,7 +99,7 @@ public class ListGCellTest {
 
     @Test
     public void testGetIterator() throws Exception {
-        Iterator<GCell> iterator = managerGCell.getIterator();
+        Iterator<GCell> iterator = managerGCell.iterator();
 
         int x=0,y=0;
         while (iterator.hasNext()){

@@ -1,4 +1,4 @@
-package logic.gameComponents.gObject;
+package logic.gameComponents.boardComponents.gObject;
 
 import java.util.ArrayList;
 

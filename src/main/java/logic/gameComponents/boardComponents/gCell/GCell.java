@@ -1,12 +1,12 @@
-package logic.gameComponents.gCell;
+package logic.gameComponents.boardComponents.gCell;
 
-import logic.gameComponents.GameComponent;
-import logic.gameComponents.gObject.GObject;
+import logic.gameComponents.GComponent;
+import logic.gameComponents.boardComponents.gObject.GObject;
 
 /**
  * Created by Nikita on 16.02.2016.
  */
-public class GCell extends GameComponent {
+public class GCell extends GComponent {
 
     private GObject gObject;
 
@@ -38,9 +38,5 @@ public class GCell extends GameComponent {
 
     public void setGObject(GObject gObject) {
         this.gObject = gObject;
-        if (gObject!=null) {
-            gObject.setX(x);
-            gObject.setY(y);
-        }
     }
 }

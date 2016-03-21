@@ -8,7 +8,7 @@ import java.awt.*;
 
 /**
  * Супер класс для всех GPanel.
- * Настраивает JPanel для отрисовки GameComponent.
+ * Настраивает JPanel для отрисовки GComponent.
  */
 public class GPanel extends JPanel {
     private ImageIcon image;

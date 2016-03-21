@@ -1,79 +1,103 @@
 package logic;
 
-import logic.gameComponents.boardComponents.FactoryGBoard;
-import logic.gameComponents.boardComponents.FactoryGBoardDefault;
-import logic.gameComponents.boardComponents.GBoard;
-import logic.gameComponents.gCell.FactoryGCell;
-import logic.gameComponents.gCell.FactoryGCellDefault;
-import logic.gameComponents.gCell.GCell;
-import logic.gameComponents.gObject.GObject;
+import gui.Display;
+import gui.JDisplay;
+import logic.action.command.ReceiverAction;
+import logic.action.command.gObject.ReceiverGObject;
+import logic.action.command.gObject.command.CommandMove;
+import logic.gameComponents.boardComponents.gBoard.FactoryGBoard;
+import logic.gameComponents.boardComponents.gBoard.FactoryGBoardDefault;
+import logic.gameComponents.boardComponents.gBoard.GBoard;
+import logic.gameComponents.boardComponents.gCell.FactoryGCell;
+import logic.gameComponents.boardComponents.gCell.FactoryGCellDefault;
+import logic.gameComponents.boardComponents.gCell.GCell;
+import logic.gameComponents.boardComponents.gCell.list.HashMapPanelGCell;
+import logic.gameComponents.boardComponents.gCell.list.ListPanelGCell;
+import logic.gameComponents.boardComponents.gObject.GObject;
+import logic.gameComponents.boardComponents.gObject.list.ArrayListGObject;
+import logic.gameComponents.boardComponents.gObject.list.ListGObject;
 import logic.listeners.keyboard.KeyListenerMainPlayer;
 import logic.listeners.mouse.MouseListenerDefault;
-import logic.moveLogic.MoveObject;
 import logic.resources.loader.image.ImageLoader;
 import logic.resources.manager.ResManager;
 
-import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Created by Nikita on 16.02.2016.
  */
 public class MainStart {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         int x = 10;
         int y = 10;
 
-        FactoryGBoard factoryGBoard = new FactoryGBoardDefault();
-        GBoard gBoard = factoryGBoard.createGBoard(x,y);
 
+        //Загрузка Image
         ResManager resManager = ResManager.getResManager();
         resManager.putImageIcon(ImageLoader.getImage("null.jpg"));
         resManager.putImageIcon(ImageLoader.getImage("grass.jpg"));
         resManager.putImageIcon(ImageLoader.getImage("Player.png"));
 
+        //Создание и заполнение listGCell
         MouseListenerDefault listener = new MouseListenerDefault();
         FactoryGCell factoryGCell = new FactoryGCellDefault();
+        ListPanelGCell<GCell> listGCell = new HashMapPanelGCell(x,y);
         for (GCell gCell : factoryGCell.createGCell(x * y)) {
             gCell.getGPanel().addMouseListener(listener);
-            gBoard.getListGCell().add(gCell);
+            listGCell.add(gCell);
         }
 
-        GObject gObject = new GObject();
-        gObject.setMove(new MoveObject(gObject, gBoard.getListGCell()));
-        gBoard.getListGCell().get(3,3).setGObject(gObject);
+        //Создание и заполнение listGObject
+        ListGObject<GObject> listGObject = new ArrayListGObject();
 
 
-        JFrame frame = new JFrame();
 
 
-        frame.add(gBoard.getGPanel());
+        FactoryGBoard factoryGBoard = new FactoryGBoardDefault();
+        GBoard gBoard = factoryGBoard.createGBoard(listGObject,listGCell);
 
-        frame.addKeyListener(new KeyListenerMainPlayer(gObject.getMove()));
 
-        frame.addKeyListener(new KeyListener() {
+        GObject player = new GObject();
+        listGObject.add(player);
+
+        //Создание и настройка команды.
+        CommandMove commandMove = new CommandMove(player,gBoard);
+        commandMove.setParameters(CommandMove.NAME_PARAMETER_MAX_X_MOVE,gBoard.getListGCell().getMaxX()+"");
+        commandMove.setParameters(CommandMove.NAME_PARAMETER_MAX_Y_MOVE,gBoard.getListGCell().getMaxY()+"");
+
+        ReceiverAction receiver = new ReceiverGObject();
+        receiver.addActionCommand(commandMove,0);
+        player.setReceiverAction(receiver);
+        gBoard.getListGCell().get(3, 3).setGObject(player);
+
+        Display display = new JDisplay();
+
+        display.addKeyListener(new KeyListenerMainPlayer(player));
+        display.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
+
             }
 
             @Override
             public void keyPressed(KeyEvent e) {
-                frame.repaint();
+                if(e.getKeyCode()==32){
+                    gBoard.updateGCell();
+                }
+                if(e.getKeyCode()==66){
+                    gBoard.updateGObject();
+                }
             }
 
             @Override
             public void keyReleased(KeyEvent e) {
+
             }
         });
 
-
-        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        frame.setSize(800,800);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        display.showPanel(gBoard.getGPanel());
+        display.start();
+        gBoard.update();
     }
 }

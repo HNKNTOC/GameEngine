@@ -6,37 +6,38 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
+import java.util.Observable;
 
 /**
  * Супер класс для отображения всех игровых компонентов.
- * Каждый GameComponent должен иметь GPanel которая будет отображать этот GameComponent.
+ * Каждый GComponent должен иметь GPanel которая будет отображать этот GComponent.
  */
-public abstract class GameComponent{
-    private static final Logger logger = LogManager.getLogger(GameComponent.class);
+public abstract class GComponent{
+    private static final Logger logger = LogManager.getLogger(GComponent.class);
     /**
      * Панель которая будет отображать игровой компонент.
      */
     private GPanel gPanel;
 
     /**
-     * Id уникальный код для всех GameComponent
+     * Id уникальный код для всех GComponent
      */
     private int id;
 
     /**
-     * Создание GameComponent с стандартной JPanel.
+     * Создание GComponent с стандартной JPanel.
      */
-    public GameComponent() {
+    public GComponent() {
         generateId();
         gPanel = new GPanel();
         logger.info("Create "+this.toString());
     }
 
     /**
-     * Создание GameComponent с переменными параметрами.
-     * @param gPanel которая будет отображать данный GameComponent.
+     * Создание GComponent с переменными параметрами.
+     * @param gPanel которая будет отображать данный GComponent.
      */
-    public GameComponent(GPanel gPanel) {
+    public GComponent(GPanel gPanel) {
         generateId();
         this.gPanel = gPanel;
         logger.info("Create "+this.toString());
@@ -62,8 +63,18 @@ public abstract class GameComponent{
     }
 
     @Override
+    public boolean equals(Object o) {
+        return getClass() == o.getClass() && (this.id == o.hashCode());
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
+    }
+
+    @Override
     public String toString() {
-        return "GameComponent{" +
+        return "GComponent{" +
                 "id=" + id +
                 ", gPanel=" + gPanel +
                 '}';
