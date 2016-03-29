@@ -1,9 +1,8 @@
 package logic.gameComponents.boardComponents.gCellList;
 
-import logic.gameComponents.boardComponents.gBoard.GBoard;
 import logic.gameComponents.boardComponents.gCell.GCell;
 import logic.gameComponents.boardComponents.gCell.list.HashMapPanelGCell;
-import logic.gameComponents.boardComponents.gCell.list.ListPanelGCell;
+import logic.gameComponents.boardComponents.gCell.list.ListGCell;
 import logic.gameComponents.boardComponents.gObject.GObject;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -18,12 +17,12 @@ import static org.junit.Assert.*;
 /**
  * Created by Nikita on 16.02.2016.
  */
-public class ListPanelGCellTest {
+public class ListGCellTest {
     int maxX = 10;
     int maxY = 5;
     int size = maxX*maxY;
 
-    ListPanelGCell<GCell> managerGCell;
+    ListGCell<GCell> managerGCell;
     GCell[][] gCells = new GCell[maxX][maxY];
 
     @BeforeClass
@@ -46,7 +45,7 @@ public class ListPanelGCellTest {
             y=0;
             x++;
         }
-        //Создание ListPanelGCell и наполнение его GCell из gCells
+        //Создание ListGCell и наполнение его GCell из gCells
         managerGCell = new HashMapPanelGCell(maxX,maxY);
 
         for(GCell[] list:gCells){

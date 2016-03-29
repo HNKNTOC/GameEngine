@@ -51,8 +51,6 @@ public class CommandMove extends CommandGObject {
             gObject.setY(y);
             oldCell.setGObject(null);
             newCell.setGObject(gObject);
-            newCell.getGPanel().repaint();
-            oldCell.getGPanel().repaint();
         }
     }
 

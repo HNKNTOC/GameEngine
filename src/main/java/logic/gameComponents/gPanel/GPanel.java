@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.HashMap;
 
 /**
  * Супер класс для всех GPanel.
@@ -34,9 +35,12 @@ public class GPanel extends JPanel {
         logger.debug("setImageIcon = "+image);
     }
 
+
+
     @Override
     protected void paintComponent(Graphics g) {
         if (image!=null) {
+            logger.debug("paintComponent = "+image);
             g.drawImage(image.getImage(),0,0,getWidth(),getHeight(),null);
         }else {
             logger.warn("paintComponent image!=null");

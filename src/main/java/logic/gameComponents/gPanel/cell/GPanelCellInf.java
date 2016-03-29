@@ -7,11 +7,12 @@ import java.awt.*;
 /**
  * Created by Nikita on 16.02.2016.
  */
-public class GCellPanelInf extends GCellPanel {
+public class GPanelCellInf extends GPanelCell {
+    private GCell gCell;
 
-
-    public GCellPanelInf(GCell gCell) {
-        super(gCell);
+    public GPanelCellInf(GCell gCell) {
+        super();
+        this.gCell = gCell;
         setColor(Color.RED);
     }
 
@@ -23,5 +24,10 @@ public class GCellPanelInf extends GCellPanel {
         g.setColor(getColor());
         g.drawLine(0, 0, getWidth(), 0);
         g.drawLine(0, 0, 0,getHeight());
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
     }
 }

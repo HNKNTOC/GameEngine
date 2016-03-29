@@ -2,11 +2,9 @@ package logic.gameComponents.boardComponents.gBoard;
 
 import logic.gameComponents.GComponent;
 import logic.gameComponents.boardComponents.gCell.list.HashMapPanelGCell;
-import logic.gameComponents.boardComponents.gCell.list.ListPanelGCell;
+import logic.gameComponents.boardComponents.gCell.list.ListGCell;
 import logic.gameComponents.boardComponents.gCell.GCell;
-import logic.gameComponents.boardComponents.gObject.GObject;
-import logic.gameComponents.boardComponents.gObject.list.ArrayListGObject;
-import logic.gameComponents.boardComponents.gObject.list.ListGObject;
+import logic.gameComponents.gPanel.GPanel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,55 +12,41 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by Nikita on 16.02.2016.
+ * Доска отображаюшая все GCell которые содержатся в ListGCell
  */
-public class GBoard extends GComponent {
+public class GBoard extends GComponent<GPanel> {
     private static final Logger logger = LogManager.getLogger(GBoard.class);
     /**
      * Здесь содержатся GCell которые должны отображятся на GBoard.
      */
-    private ListPanelGCell<GCell> listGCell;
-    /**
-     * Здесь содержатся GObject которые должны отображятся на GBoard.
-     */
-    private ListGObject<GObject> listGObject;
+    private ListGCell<GCell> listGCell;
 
     public GBoard(int x, int y) {
+        setGPanel(new GPanel()); //Перенести в фактори
         this.listGCell = new HashMapPanelGCell(x, y);
-        this.listGObject = new ArrayListGObject();
         getGPanel().setLayout(new GridLayout(x, y));
         logger.info("Created " + toString());
-        update();
     }
 
-    public GBoard(ListGObject<GObject> listGObject, ListPanelGCell<GCell> listGCell) {
+    public GBoard(ListGCell<GCell> listGCell) {
+        setGPanel(new GPanel()); //Перенести в фактори
         this.listGCell = listGCell;
-        this.listGObject = listGObject;
         int x = listGCell.getMaxX();
         int y = listGCell.getMaxY();
         getGPanel().setLayout(new GridLayout(x, y));
         logger.info("Created " + toString());
-        update();
     }
 
-    public ListPanelGCell<GCell> getListGCell() {
+    public ListGCell<GCell> getListGCell() {
         return listGCell;
     }
 
-    public void setListGCell(ListPanelGCell<GCell> listGCell) {
+    public void setListGCell(ListGCell<GCell> listGCell) {
         this.listGCell = listGCell;
     }
 
     /**
-     * Отображает все элементы находяшиийся в listGCell и listGObject.
-     */
-    public void update() {
-        logger.info("update");
-        updateGCell();
-    }
-
-    /**
-     * Отображает все элементы из listGCell.
+     * Добовляет все GCell находяшиеся в listGCell на свою панель.
      */
     public void updateGCell() {
         logger.info("updateGCell");
@@ -70,18 +54,6 @@ public class GBoard extends GComponent {
         panel.removeAll();
         for (GCell gCell : listGCell) {
             panel.add(gCell.getGPanel());
-        }
-    }
-
-    /**
-     * Отображает все элементы из listGObject.
-     */
-    public void updateGObject() {
-        logger.info("updateGObject");
-        for (GObject gObject : listGObject) {
-            logger.info("" + gObject.toString());
-            logger.info("set x=" + gObject.getX() + " ;y=" + gObject.getY());
-            listGCell.get(gObject.getX(), gObject.getY()).setGObject(gObject);
         }
     }
 }

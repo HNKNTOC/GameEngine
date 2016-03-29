@@ -49,11 +49,9 @@ public class KeyListenerMainPlayer implements KeyListener {
             default: receiver.setParameters(CommandMove.NAME_PARAMETER_ID_ACTION,"0",0);
         }
         receiver.executeCommand(0);
-
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-
     }
 }

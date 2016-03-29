@@ -9,7 +9,7 @@ import java.util.*;
  * Обертка для LinkedHashMap.
  * Хранит в себе GCell в порядке добавления.
  */
-public class HashMapPanelGCell extends ListPanelGCell<GCell> {
+public class HashMapPanelGCell implements ListGCell<GCell> {
     private LinkedHashMap<String,GCell> mapGCell;
 
     private int x;

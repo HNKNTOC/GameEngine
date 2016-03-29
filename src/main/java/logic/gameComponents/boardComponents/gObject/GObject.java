@@ -11,8 +11,8 @@ import java.util.HashMap;
 /**
  * Игровой обьект ноходящийся в клетку
  */
-public class GObject extends GComponent {
-    ReceiverAction receiverAction;
+public class GObject extends GComponent<GPanel> {
+    private ReceiverAction receiverAction;
 
     private int x;
     private int y;

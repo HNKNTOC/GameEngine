@@ -2,9 +2,7 @@ package logic.gameComponents.boardComponents.gBoard;
 
 
 import logic.gameComponents.boardComponents.gCell.GCell;
-import logic.gameComponents.boardComponents.gCell.list.ListPanelGCell;
-import logic.gameComponents.boardComponents.gObject.GObject;
-import logic.gameComponents.boardComponents.gObject.list.ListGObject;
+import logic.gameComponents.boardComponents.gCell.list.ListGCell;
 
 /**
  * Created by Nikita on 19.02.2016.
@@ -16,7 +14,7 @@ public class FactoryGBoardDefault implements FactoryGBoard {
     }
 
     @Override
-    public GBoard createGBoard(ListGObject<GObject> listGObject, ListPanelGCell<GCell> listGCell) {
-        return new GBoard(listGObject,listGCell);
+    public GBoard createGBoard(ListGCell<GCell> listGCell) {
+        return new GBoard(listGCell);
     }
 }

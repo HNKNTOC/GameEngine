@@ -1,18 +1,14 @@
 package logic.gameComponents;
 
-import logic.gameComponents.gPanel.GPanel;
 import logic.gameComponents.generator.GeneratorId;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import javax.swing.*;
-import java.util.Observable;
-
 /**
- * Супер класс для отображения всех игровых компонентов.
+ * Супер класс для всех игровых объектов которые должны отображаться на GBoard.
  * Каждый GComponent должен иметь GPanel которая будет отображать этот GComponent.
  */
-public abstract class GComponent{
+public abstract class GComponent<GPanel>{
     private static final Logger logger = LogManager.getLogger(GComponent.class);
     /**
      * Панель которая будет отображать игровой компонент.
@@ -25,11 +21,10 @@ public abstract class GComponent{
     private int id;
 
     /**
-     * Создание GComponent с стандартной JPanel.
+     * Создание GComponent
      */
     public GComponent() {
         generateId();
-        gPanel = new GPanel();
         logger.info("Create "+this.toString());
     }
 
@@ -47,7 +42,7 @@ public abstract class GComponent{
         return id;
     }
 
-    public JPanel getGPanel() {
+    public GPanel getGPanel() {
         logger.debug("getGPanel "+gPanel);
         return gPanel;
     }

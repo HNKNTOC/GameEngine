@@ -3,7 +3,7 @@ package logic.listeners.mouse;
 
 
 
-import logic.gameComponents.gPanel.cell.GCellPanel;
+import logic.gameComponents.gPanel.cell.GPanelCell;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -15,7 +15,7 @@ import java.awt.event.MouseListener;
  */
 public class MouseListenerDefault implements MouseListener {
 
-    private GCellPanel thisPanel;
+    private GPanelCell thisPanel;
 
     @Override
     public void mouseClicked(MouseEvent e) {
@@ -29,7 +29,7 @@ public class MouseListenerDefault implements MouseListener {
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        GCellPanel newPanel  =(GCellPanel) e.getComponent();
+        GPanelCell newPanel  =(GPanelCell) e.getComponent();
         if(thisPanel ==null){
             thisPanel = newPanel;
         }else {

@@ -1,8 +1,8 @@
 package logic.gameComponents.boardComponents.gCell;
 
 
-import logic.gameComponents.gPanel.cell.GCellPanel;
-import logic.gameComponents.gPanel.cell.GCellPanelInf;
+import logic.gameComponents.gPanel.cell.GPanelCell;
+import logic.gameComponents.gPanel.cell.GPanelCellInf;
 import logic.resources.manager.ResManager;
 
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ public class FactoryGCellDefault implements FactoryGCell {
     @Override
     public GCell createGCell() {
         GCell gCell = new GCell();
-        GCellPanel panel = new GCellPanelInf(gCell);
+        GPanelCell panel = new GPanelCellInf(gCell);
         panel.setImageIcon(ResManager.getResManager().getImageIcon(1));
         gCell.setGPanel(panel);
         return gCell;

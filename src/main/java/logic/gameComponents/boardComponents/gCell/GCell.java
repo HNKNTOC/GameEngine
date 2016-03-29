@@ -1,12 +1,15 @@
 package logic.gameComponents.boardComponents.gCell;
 
+
 import logic.gameComponents.GComponent;
 import logic.gameComponents.boardComponents.gObject.GObject;
+import logic.gameComponents.gPanel.cell.GPanelCell;
+
 
 /**
- * Created by Nikita on 16.02.2016.
+ *  Базовый класс для всех клеток.
  */
-public class GCell extends GComponent {
+public class GCell extends GComponent<GPanelCell> {
 
     private GObject gObject;
 
@@ -38,5 +41,21 @@ public class GCell extends GComponent {
 
     public void setGObject(GObject gObject) {
         this.gObject = gObject;
+        updateGPanel();
     }
+
+    /**
+     * Обновляет image в GPanel.
+     */
+     private void updateGPanel(){
+        if (gObject == null) {
+            getGPanel().setGPanelObject(null);
+        }else {
+            getGPanel().setGPanelObject(gObject.getGPanel());
+        }
+    }
+
+
+
+
 }

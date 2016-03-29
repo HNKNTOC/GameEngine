@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * Created by Nikita on 20.03.2016.
  */
-public class ArrayListGObject extends ListGObject<GObject> {
+public class ArrayListGObject implements ListGObject<GObject> {
     private ArrayList<GObject> listGObjects;
 
     public ArrayListGObject(ArrayList<GObject> listGObjects) {
@@ -21,7 +21,6 @@ public class ArrayListGObject extends ListGObject<GObject> {
 
     @Override
     public boolean add(GObject gObject) {
-        notifyObservers();
         return listGObjects.add(gObject);
     }
 
