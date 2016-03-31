@@ -1,9 +1,9 @@
 package logic.gameComponents.boardComponents.gBoard;
 
 import logic.gameComponents.GComponent;
+import logic.gameComponents.boardComponents.gCell.GCell;
 import logic.gameComponents.boardComponents.gCell.list.HashMapPanelGCell;
 import logic.gameComponents.boardComponents.gCell.list.ListGCell;
-import logic.gameComponents.boardComponents.gCell.GCell;
 import logic.gameComponents.gPanel.GPanel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,14 +22,12 @@ public class GBoard extends GComponent<GPanel> {
     private ListGCell<GCell> listGCell;
 
     public GBoard(int x, int y) {
-        setGPanel(new GPanel()); //Перенести в фактори
         this.listGCell = new HashMapPanelGCell(x, y);
         getGPanel().setLayout(new GridLayout(x, y));
         logger.info("Created " + toString());
     }
 
     public GBoard(ListGCell<GCell> listGCell) {
-        setGPanel(new GPanel()); //Перенести в фактори
         this.listGCell = listGCell;
         int x = listGCell.getMaxX();
         int y = listGCell.getMaxY();
@@ -39,10 +37,6 @@ public class GBoard extends GComponent<GPanel> {
 
     public ListGCell<GCell> getListGCell() {
         return listGCell;
-    }
-
-    public void setListGCell(ListGCell<GCell> listGCell) {
-        this.listGCell = listGCell;
     }
 
     /**
