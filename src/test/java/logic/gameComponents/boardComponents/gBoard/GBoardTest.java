@@ -1,13 +1,11 @@
 package logic.gameComponents.boardComponents.gBoard;
 
 import logic.gameComponents.boardComponents.gCell.GCell;
-import logic.gameComponents.boardComponents.gCell.list.ListGCell;
 import logic.gameComponents.gPanel.GPanel;
-import logic.gameComponents.gPanel.cell.GPanelCell;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by Nikita on 31.03.2016.
@@ -24,7 +22,7 @@ public class GBoardTest {
     }
 
     /**
-     * Проверка правельного создания ListGCell в GBoard
+     * Проверка правильного создания ListGCell в GBoard
      */
     @Test
     public void getListGCell(){
@@ -40,7 +38,7 @@ public class GBoardTest {
     }
 
     /**
-     * Проверяет совподают ли id и hashCode
+     * Проверяет совпадают ли id и hashCode
      * @throws Exception
      */
     @Test
