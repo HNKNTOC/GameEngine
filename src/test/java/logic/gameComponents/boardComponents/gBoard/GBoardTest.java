@@ -2,6 +2,7 @@ package logic.gameComponents.boardComponents.gBoard;
 
 import logic.gameComponents.boardComponents.gCell.GCell;
 import logic.gameComponents.gPanel.GPanel;
+import logic.gameComponents.gPanel.cell.GPanelCell;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -32,6 +33,7 @@ public class GBoardTest {
     @Test
     public void updateGCell(){
         GCell gCell = new GCell();
+        gCell.setGPanel(new GPanelCell());
         gBoard.getListGCell().add(gCell);
         gBoard.updateGCell();
         assertTrue(gBoard.getGPanel().getComponent(0) == gCell.getGPanel());
