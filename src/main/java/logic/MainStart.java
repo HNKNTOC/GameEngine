@@ -5,12 +5,12 @@ import gui.JDisplay;
 import logic.action.command.ReceiverAction;
 import logic.action.command.gObject.ReceiverGObject;
 import logic.action.command.gObject.command.CommandMove;
-import logic.gameComponents.boardComponents.gBoard.FactoryGBoard;
-import logic.gameComponents.boardComponents.gBoard.FactoryGBoardDefault;
 import logic.gameComponents.boardComponents.gBoard.GBoard;
-import logic.gameComponents.boardComponents.gCell.FactoryGCell;
-import logic.gameComponents.boardComponents.gCell.FactoryGCellDefault;
+import logic.gameComponents.boardComponents.gBoard.GBoardFactory;
+import logic.gameComponents.boardComponents.gBoard.GBoardFactoryDefault;
 import logic.gameComponents.boardComponents.gCell.GCell;
+import logic.gameComponents.boardComponents.gCell.GCellFactory;
+import logic.gameComponents.boardComponents.gCell.GCellFactoryDefault;
 import logic.gameComponents.boardComponents.gCell.list.HashMapPanelGCell;
 import logic.gameComponents.boardComponents.gCell.list.ListGCell;
 import logic.gameComponents.boardComponents.gObject.GObject;
@@ -39,18 +39,16 @@ public class MainStart {
 
         //Создание и заполнение listGCell
         MouseListenerDefault listener = new MouseListenerDefault();
-        FactoryGCell factoryGCell = new FactoryGCellDefault();
+        GCellFactory GCellFactory = new GCellFactoryDefault();
         ListGCell<GCell> listGCell = new HashMapPanelGCell(x,y);
-        for (GCell gCell : factoryGCell.createGCell(x * y)) {
+        for (GCell gCell : GCellFactory.createGCell(x * y)) {
             gCell.getGPanel().addMouseListener(listener);
             listGCell.add(gCell);
         }
 
 
-
-
-        FactoryGBoard factoryGBoard = new FactoryGBoardDefault();
-        GBoard gBoard = factoryGBoard.createGBoard(listGCell);
+        GBoardFactory GBoardFactory = new GBoardFactoryDefault();
+        GBoard gBoard = GBoardFactory.createGBoard(listGCell);
 
 
         GObject player = new GObject();
