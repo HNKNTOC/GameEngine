@@ -1,5 +1,8 @@
 package logic.gameComponents;
 
+import logic.dynamicValues.Dynamic;
+import logic.dynamicValues.DynamicParameter;
+import logic.dynamicValues.DynamicParameterMap;
 import logic.gameComponents.generator.GeneratorId;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -8,7 +11,7 @@ import org.apache.logging.log4j.Logger;
  * Супер класс для всех игровых объектов которые должны отображаться на GBoard.
  * Каждый GComponent должен иметь GPanel которая будет отображать этот GComponent.
  */
-public abstract class GComponent<GPanel>{
+public abstract class GComponent<GPanel> implements Dynamic {
     private static final Logger logger = LogManager.getLogger(GComponent.class);
     /**
      * Панель которая будет отображать игровой компонент.
@@ -19,6 +22,11 @@ public abstract class GComponent<GPanel>{
      * Id уникальный код для всех GComponent
      */
     private int id;
+
+    /**
+     *  Хранит в себе динамические параметры и может добавлять новые.
+     */
+    private DynamicParameterMap mapParameter;
 
     /**
      * Создание GComponent
@@ -34,8 +42,14 @@ public abstract class GComponent<GPanel>{
      */
     public GComponent(GPanel gPanel) {
         generateId();
+        this.mapParameter = new DynamicParameterMap();
         this.gPanel = gPanel;
         logger.info("Create "+this.toString());
+    }
+
+    @Override
+    public DynamicParameter getDynamicValues() {
+        return mapParameter;
     }
 
     public int getId() {

@@ -13,7 +13,7 @@ public class GPanelCellInf extends GPanelCell {
     public GPanelCellInf(GCell gCell) {
         super();
         this.gCell = gCell;
-        setColor(Color.RED);
+        getDynamicValues().putParameter("Color", "0");
     }
 
     @Override
@@ -21,7 +21,8 @@ public class GPanelCellInf extends GPanelCell {
         super.paint(g);
         g.drawString("X="+gCell.getX() + ";" +"Y="+gCell.getY(),5,15);
 
-        g.setColor(getColor());
+
+        g.setColor(parsingColor());
         g.drawLine(0, 0, getWidth(), 0);
         g.drawLine(0, 0, 0,getHeight());
     }
@@ -29,5 +30,22 @@ public class GPanelCellInf extends GPanelCell {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+    }
+
+    /**
+     * Получает цвет из динамическоло параметра Color.
+     * 0 - red 1 - blue
+     */
+    private Color parsingColor() {
+        String color = getDynamicValues().getParameter("Color");
+        if (color == null) {
+            return Color.GREEN;
+        }
+        int i = Integer.parseInt(color);
+        if (i == 0) {
+            return Color.RED;
+        } else {
+            return Color.BLUE;
+        }
     }
 }

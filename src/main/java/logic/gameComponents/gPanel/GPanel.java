@@ -14,13 +14,20 @@ import java.util.HashMap;
 public class GPanel extends JPanel {
     private ImageIcon image;
     private static final Logger logger = LogManager.getLogger(GPanel.class);
+    /**
+     * В данный Map записываются дополнительные параметры.
+     * String - имя параметра, Object значение параметра.
+     */
+    private HashMap<String, Object> map;
 
     public GPanel() {
+        map = new HashMap<>();
         image = ResManager.getResManager().getImageIcon(0);
         logger.info("Create "+this.toString());
     }
 
     public GPanel(ImageIcon image) {
+        map = new HashMap<>();
         this.image = image;
         logger.info("Create "+this.toString());
     }
@@ -34,7 +41,6 @@ public class GPanel extends JPanel {
         this.image = image;
         logger.debug("setImageIcon = "+image);
     }
-
 
 
     @Override

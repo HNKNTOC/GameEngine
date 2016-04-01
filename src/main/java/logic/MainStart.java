@@ -14,6 +14,8 @@ import logic.gameComponents.boardComponents.gCell.GCellFactoryDefault;
 import logic.gameComponents.boardComponents.gCell.list.HashMapPanelGCell;
 import logic.gameComponents.boardComponents.gCell.list.ListGCell;
 import logic.gameComponents.boardComponents.gObject.GObject;
+import logic.gameComponents.gPanel.GPanelDefaultFactory;
+import logic.gameComponents.gPanel.cell.GPanelCellFactory;
 import logic.listeners.keyboard.KeyListenerMainPlayer;
 import logic.listeners.mouse.MouseListenerDefault;
 import logic.resources.loader.image.ImageLoader;
@@ -39,7 +41,7 @@ public class MainStart {
 
         //Создание и заполнение listGCell
         MouseListenerDefault listener = new MouseListenerDefault();
-        GCellFactory GCellFactory = new GCellFactoryDefault();
+        GCellFactory GCellFactory = new GCellFactoryDefault(new GPanelCellFactory());
         ListGCell<GCell> listGCell = new HashMapPanelGCell(x,y);
         for (GCell gCell : GCellFactory.createGCell(x * y)) {
             gCell.getGPanel().addMouseListener(listener);
@@ -47,7 +49,7 @@ public class MainStart {
         }
 
 
-        GBoardFactory GBoardFactory = new GBoardFactoryDefault();
+        GBoardFactory GBoardFactory = new GBoardFactoryDefault(new GPanelDefaultFactory());
         GBoard gBoard = GBoardFactory.createGBoard(listGCell);
 
 
@@ -91,6 +93,7 @@ public class MainStart {
 
         display.showPanel(gBoard.getGPanel());
         display.start();
+        gBoard.getGPanel().setImageIcon(null);
         gBoard.updateGCell();
     }
 }

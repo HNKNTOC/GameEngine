@@ -1,11 +1,8 @@
 package logic.listeners.mouse;
 
 
-
-
 import logic.gameComponents.gPanel.cell.GPanelCell;
 
-import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -33,11 +30,11 @@ public class MouseListenerDefault implements MouseListener {
         if(thisPanel ==null){
             thisPanel = newPanel;
         }else {
-            thisPanel.setColor(Color.RED);
+            thisPanel.getDynamicValues().putParameter("Color", "0");
             thisPanel.repaint();
         }
         thisPanel = newPanel;
-        thisPanel.setColor(Color.BLUE);
+        thisPanel.getDynamicValues().putParameter("Color", "1");
         thisPanel.repaint();
     }
 

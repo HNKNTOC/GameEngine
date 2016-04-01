@@ -23,7 +23,6 @@ public class GBoard extends GComponent<GPanel> {
 
     public GBoard(int x, int y) {
         this.listGCell = new HashMapPanelGCell(x, y);
-        getGPanel().setLayout(new GridLayout(x, y));
         logger.info("Created " + toString());
     }
 
@@ -31,8 +30,13 @@ public class GBoard extends GComponent<GPanel> {
         this.listGCell = listGCell;
         int x = listGCell.getMaxX();
         int y = listGCell.getMaxY();
-        getGPanel().setLayout(new GridLayout(x, y));
         logger.info("Created " + toString());
+    }
+
+    @Override
+    public void setGPanel(GPanel gPanel) {
+        super.setGPanel(gPanel);
+        getGPanel().setLayout(new GridLayout(listGCell.getMaxX(), listGCell.getMaxY()));
     }
 
     public ListGCell<GCell> getListGCell() {

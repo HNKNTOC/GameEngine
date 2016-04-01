@@ -1,9 +1,12 @@
 package logic.gameComponents.boardComponents.gCellList;
 
 import logic.gameComponents.boardComponents.gCell.GCell;
+import logic.gameComponents.boardComponents.gCell.GCellFactory;
+import logic.gameComponents.boardComponents.gCell.GCellFactoryDefault;
 import logic.gameComponents.boardComponents.gCell.list.HashMapPanelGCell;
 import logic.gameComponents.boardComponents.gCell.list.ListGCell;
 import logic.gameComponents.boardComponents.gObject.GObject;
+import logic.gameComponents.gPanel.cell.GPanelCellFactory;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -11,19 +14,20 @@ import org.junit.Test;
 import java.util.Iterator;
 import java.util.Random;
 
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by Nikita on 16.02.2016.
  */
 public class ListGCellTest {
-    int maxX = 10;
-    int maxY = 5;
-    int size = maxX*maxY;
+    private int maxX = 10;
+    private int maxY = 5;
+    private int size = maxX * maxY;
 
-    ListGCell<GCell> managerGCell;
-    GCell[][] gCells = new GCell[maxX][maxY];
+    private ListGCell<GCell> managerGCell;
+    private GCell[][] gCells = new GCell[maxX][maxY];
+
+    private final GCellFactory factory = new GCellFactoryDefault(new GPanelCellFactory());
 
     @BeforeClass
     public static void start(){
@@ -33,10 +37,9 @@ public class ListGCellTest {
     public void setUp() throws Exception {
         //Создание gCells и наполнение его GCell
         int x=0,y=0;
-
         for(int i=gCells.length;i>0;i--){
             for(int i1=gCells[0].length;i1>0;i1--){
-                GCell gCell = new GCell();
+                GCell gCell = factory.createGCell();
                 gCell.setX(x);
                 gCell.setY(y);
                 gCells[x][y]=gCell;
@@ -68,7 +71,7 @@ public class ListGCellTest {
 
     @Test
     public void testSet() throws Exception {
-        GCell gCell = new GCell();
+        GCell gCell = factory.createGCell();
         GObject gObject = new GObject();
         gCell.setGObject(gObject);
 

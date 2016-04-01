@@ -2,6 +2,7 @@ package logic.gameComponents.boardComponents.gBoard;
 
 import logic.gameComponents.boardComponents.gCell.GCell;
 import logic.gameComponents.gPanel.GPanel;
+import logic.gameComponents.gPanel.GPanelDefaultFactory;
 import logic.gameComponents.gPanel.cell.GPanelCell;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -19,7 +20,7 @@ public class GBoardTest {
 
     @BeforeClass
     public static void set() {
-        gBoard = new GBoard(x,y);
+        gBoard = new GBoardFactoryDefault(new GPanelDefaultFactory()).createGBoard(x, y);
     }
 
     /**

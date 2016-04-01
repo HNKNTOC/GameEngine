@@ -1,5 +1,8 @@
 package logic.gameComponents.gPanel.cell;
 
+import logic.dynamicValues.Dynamic;
+import logic.dynamicValues.DynamicParameter;
+import logic.dynamicValues.DynamicParameterMap;
 import logic.gameComponents.gPanel.GPanel;
 
 import java.awt.*;
@@ -7,10 +10,17 @@ import java.awt.*;
 /**
  * Панель для GCell отображает объект находящийся в GCell.
  */
-public class GPanelCell extends GPanel {
+public class GPanelCell extends GPanel implements Dynamic {
 
-    private Color color;
     private GPanel gPanelObject;
+    /**
+     * Хранит в себе динамические параметры и может добавлять новые.
+     */
+    private DynamicParameterMap mapParameter;
+
+    public GPanelCell() {
+        this.mapParameter = new DynamicParameterMap();
+    }
 
     public GPanel getGPanelObject() {
         return gPanelObject;
@@ -20,27 +30,23 @@ public class GPanelCell extends GPanel {
         this.gPanelObject = gPanelObject;
     }
 
-    public Color getColor() {
-        return color;
+    @Override
+    public DynamicParameter<String, String> getDynamicValues() {
+        return mapParameter;
     }
-
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         removeAll();
-        if(gPanelObject!=null){
+        if (gPanelObject != null) {
             setLayout(new GridBagLayout());
             GridBagConstraints c = new GridBagConstraints();
-            c.insets = new Insets(5,5,5,5);
+            c.insets = new Insets(5, 5, 5, 5);
             c.weightx = 1;
             c.weighty = 1;
             c.fill = GridBagConstraints.BOTH;
-            add(gPanelObject,c);
+            add(gPanelObject, c);
         }
     }
 }
