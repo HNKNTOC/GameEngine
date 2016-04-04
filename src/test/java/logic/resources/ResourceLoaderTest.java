@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import java.net.URL;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by Nikita on 12.03.2016.
@@ -24,16 +24,9 @@ public class ResourceLoaderTest {
 
     /**
      * Проверяет выкидывает ли getResource NullPointerException при неверно заданных параметрах.
-     * @throws Exception
      */
-    @Test
-    public void testGetResourceNullPointerException() throws Exception {
-        try {
+    @Test(expected = NullPointerException.class)
+    public void testGetException() {
             ResourceLoader.getResource("test");
-        } catch (NullPointerException e) {
-            assertTrue(true);
-            return;
-        }
-        assertTrue(false);
     }
 }

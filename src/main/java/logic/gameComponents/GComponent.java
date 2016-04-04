@@ -48,7 +48,7 @@ public abstract class GComponent<GPanel> implements Dynamic {
     }
 
     @Override
-    public DynamicParameter getDynamicValues() {
+    public DynamicParameter<String, String> getDynamicValues() {
         return mapParameter;
     }
 

@@ -42,20 +42,19 @@ public class GBoardTest {
 
     /**
      * Проверяет совпадают ли id и hashCode
-     * @throws Exception
      */
     @Test
-    public void getId() throws Exception {
+    public void getId() {
         assertTrue(gBoard.getId()==gBoard.hashCode());
     }
 
     @Test
-    public void getGPanel() throws Exception {
+    public void getGPanel() {
         assertTrue(gBoard.getGPanel()!=null);
     }
 
     @Test
-    public void setGPanel() throws Exception {
+    public void setGPanel() {
         GPanel gPanel = new GPanel();
         gBoard.setGPanel(gPanel);
         assertTrue(gBoard.getGPanel() == gPanel);
