@@ -1,12 +1,10 @@
 import gui.JDisplay;
-import logic.gameComponents.boardComponents.gCell.GCell;
-import logic.gameComponents.boardComponents.gObject.GObject;
-import logic.gameComponents.gPanel.GPanel;
+import logic.gameComponents.boardComponents.gCell.GCellDefault;
+import logic.gameComponents.boardComponents.gObject.GObjectAbstract;
 import logic.gameComponents.gPanel.cell.GPanelCell;
 import logic.resources.loader.image.ImageLoader;
 import logic.resources.manager.ResManager;
 
-import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -21,11 +19,11 @@ public class TestGPanelCell {
         resManager.putImageIcon(ImageLoader.getImage("grass.jpg"));
         resManager.putImageIcon(ImageLoader.getImage("Player.png"));
 
-        GCell cell = new GCell();
+        GCellDefault cell = new GCellDefault();
         cell.setGPanel(new GPanelCell());
         cell.getGPanel().setImageIcon(ImageLoader.getImage("grass.jpg"));
 
-        GObject player = new GObject();
+        GObjectAbstract player = new GObjectAbstract();
         player.getGPanel().setImageIcon(ImageLoader.getImage("Player.png"));
 
         cell.setGObject(player);

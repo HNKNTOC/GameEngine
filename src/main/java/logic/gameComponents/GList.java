@@ -7,8 +7,8 @@ package logic.gameComponents;
 public interface GList<GComponent> extends Iterable<GComponent>  {
 
     /**
-     * Получить количество GComponent.
-     * @return количество GComponent находящихся в GList.
+     * Получить количество GComponentAbstract.
+     * @return количество GComponentAbstract находящихся в GList.
      */
     int size();
 

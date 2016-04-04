@@ -1,6 +1,6 @@
 package logic.gameComponents.boardComponents.gBoard;
 
-import logic.gameComponents.GComponent;
+import logic.gameComponents.GComponentAbstract;
 import logic.gameComponents.boardComponents.gCell.GCell;
 import logic.gameComponents.boardComponents.gCell.list.HashMapPanelGCell;
 import logic.gameComponents.boardComponents.gCell.list.ListGCell;
@@ -12,12 +12,12 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Доска отображаюшая все GCell которые содержатся в ListGCell
+ * Доска отображаюшая все GCellDefault которые содержатся в ListGCell
  */
-public class GBoard extends GComponent<GPanel> {
+public class GBoard extends GComponentAbstract<GPanel> {
     private static final Logger logger = LogManager.getLogger(GBoard.class);
     /**
-     * Здесь содержатся GCell которые должны отображятся на GBoard.
+     * Здесь содержатся GCellDefault которые должны отображятся на GBoard.
      */
     private ListGCell<GCell> listGCell;
 
@@ -44,7 +44,7 @@ public class GBoard extends GComponent<GPanel> {
     }
 
     /**
-     * Добовляет все GCell находяшиеся в listGCell на свою панель.
+     * Добовляет все GCellDefault находяшиеся в listGCell на свою панель.
      */
     public void updateGCell() {
         logger.info("updateGCell");

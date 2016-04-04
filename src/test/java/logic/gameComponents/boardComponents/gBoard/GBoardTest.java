@@ -1,6 +1,6 @@
 package logic.gameComponents.boardComponents.gBoard;
 
-import logic.gameComponents.boardComponents.gCell.GCell;
+import logic.gameComponents.boardComponents.gCell.GCellDefault;
 import logic.gameComponents.gPanel.GPanel;
 import logic.gameComponents.gPanel.GPanelDefaultFactory;
 import logic.gameComponents.gPanel.cell.GPanelCell;
@@ -33,7 +33,7 @@ public class GBoardTest {
 
     @Test
     public void updateGCell(){
-        GCell gCell = new GCell();
+        GCellDefault gCell = new GCellDefault();
         gCell.setGPanel(new GPanelCell());
         gBoard.getListGCell().add(gCell);
         gBoard.updateGCell();

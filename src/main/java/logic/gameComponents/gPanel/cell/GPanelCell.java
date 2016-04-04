@@ -8,7 +8,7 @@ import logic.gameComponents.gPanel.GPanel;
 import java.awt.*;
 
 /**
- * Панель для GCell отображает объект находящийся в GCell.
+ * Панель для GCellDefault отображает объект находящийся в GCellDefault.
  */
 public class GPanelCell extends GPanel implements Dynamic {
 

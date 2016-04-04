@@ -4,7 +4,7 @@ import logic.gameComponents.GList;
 
 
 /**
- * Интерфейс для удобного хранения GObject.
+ * Интерфейс для удобного хранения GObjectAbstract.
  */
 public interface ListGObject<GObject> extends GList<GObject> {
     /**
@@ -14,15 +14,15 @@ public interface ListGObject<GObject> extends GList<GObject> {
      */
      boolean add(GObject gObject);
     /**
-     * Получить GObject по id.
-     * @param id уникальный идентификатор GObject.
-     * @return GObject соответствующий id.
-     * null если id не соответствует не одному GObject.
+     * Получить GObjectAbstract по id.
+     * @param id уникальный идентификатор GObjectAbstract.
+     * @return GObjectAbstract соответствующий id.
+     * null если id не соответствует не одному GObjectAbstract.
      */
      GObject get(int id);
     /**
-     * Получить количество GObject.
-     * @return количество GObject находящихся в ListGObject.
+     * Получить количество GObjectAbstract.
+     * @return количество GObjectAbstract находящихся в ListGObject.
      */
      int size();
 }

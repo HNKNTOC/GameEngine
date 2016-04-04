@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 /**
  * Супер класс для всех GPanel.
- * Настраивает JPanel для отрисовки GComponent.
+ * Настраивает JPanel для отрисовки GComponentAbstract.
  */
 public class GPanel extends JPanel {
     private ImageIcon image;

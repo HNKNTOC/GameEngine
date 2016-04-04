@@ -3,7 +3,7 @@ package logic.action.command.gObject.command;
 import logic.action.command.CommandGObject;
 import logic.gameComponents.boardComponents.gBoard.GBoard;
 import logic.gameComponents.boardComponents.gCell.GCell;
-import logic.gameComponents.boardComponents.gObject.GObject;
+import logic.gameComponents.boardComponents.gObject.GObjectAbstract;
 
 /**
  * Created by Nikita on 18.03.2016.
@@ -19,10 +19,10 @@ public class CommandMove extends CommandGObject {
     /**
      * Объет который должен совершить действие.
      */
-    private GObject gObject;
+    private GObjectAbstract gObject;
     private GBoard gBoard;
 
-    public CommandMove(GObject gObject, GBoard gBoard) {
+    public CommandMove(GObjectAbstract gObject, GBoard gBoard) {
         this.gBoard = gBoard;
         this.gObject = gObject;
         addNewParameter(NAME_PARAMETER_ID_ACTION,0+"");

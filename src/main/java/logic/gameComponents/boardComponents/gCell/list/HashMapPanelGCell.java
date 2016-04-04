@@ -3,11 +3,12 @@ package logic.gameComponents.boardComponents.gCell.list;
 
 import logic.gameComponents.boardComponents.gCell.GCell;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 
 /**
  * Обертка для LinkedHashMap.
- * Хранит в себе GCell в порядке добавления.
+ * Хранит в себе GCellDefault в порядке добавления.
  */
 public class HashMapPanelGCell implements ListGCell<GCell> {
     private LinkedHashMap<String,GCell> mapGCell;

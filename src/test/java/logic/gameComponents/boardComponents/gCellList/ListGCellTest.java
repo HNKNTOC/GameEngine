@@ -1,11 +1,12 @@
 package logic.gameComponents.boardComponents.gCellList;
 
 import logic.gameComponents.boardComponents.gCell.GCell;
+import logic.gameComponents.boardComponents.gCell.GCellDefault;
 import logic.gameComponents.boardComponents.gCell.GCellFactory;
 import logic.gameComponents.boardComponents.gCell.GCellFactoryDefault;
 import logic.gameComponents.boardComponents.gCell.list.HashMapPanelGCell;
 import logic.gameComponents.boardComponents.gCell.list.ListGCell;
-import logic.gameComponents.boardComponents.gObject.GObject;
+import logic.gameComponents.boardComponents.gObject.GObjectAbstract;
 import logic.gameComponents.gPanel.cell.GPanelCellFactory;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -25,7 +26,7 @@ public class ListGCellTest {
     private int size = maxX * maxY;
 
     private ListGCell<GCell> managerGCell;
-    private GCell[][] gCells = new GCell[maxX][maxY];
+    private GCell[][] gCells = new GCellDefault[maxX][maxY];
 
     private final GCellFactory factory = new GCellFactoryDefault(new GPanelCellFactory());
 
@@ -72,7 +73,7 @@ public class ListGCellTest {
     @Test
     public void testSet() throws Exception {
         GCell gCell = factory.createGCell();
-        GObject gObject = new GObject();
+        GObjectAbstract gObject = new GObjectAbstract();
         gCell.setGObject(gObject);
 
         for(int i=0;i<10;i++){

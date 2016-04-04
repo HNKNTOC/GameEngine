@@ -3,43 +3,43 @@ package logic.gameComponents.boardComponents.gCell.list;
 import logic.gameComponents.GList;
 
 /**
- * Интерфейс для удобного хранения GCell.
+ * Интерфейс для удобного хранения GCellDefault.
  */
 public interface ListGCell<GCell> extends GList<GCell>{
 
 
     /**
-     * Добавляет GCell в список.
+     * Добавляет GCellDefault в список.
      * @param gCell который нужно добавить.
-     * @return true если GCell был добавлен.
+     * @return true если GCellDefault был добавлен.
      */
       boolean add(GCell gCell);
 
     /**
-     * Получить GCell по координатам.
-     * @param x колонка в которой находится GCell.
-     * @param y строка в которой находится GCell.
-     * @return GCell который находится в заданной строке и линии.
-     * Null если по заданным параметрам нету GCell.
+     * Получить GCellDefault по координатам.
+     * @param x колонка в которой находится GCellDefault.
+     * @param y строка в которой находится GCellDefault.
+     * @return GCellDefault который находится в заданной строке и линии.
+     * Null если по заданным параметрам нету GCellDefault.
      */
      GCell get(int x, int y);
 
     /**
-     * Установить GCell на заданную колонку и линию.
+     * Установить GCellDefault на заданную колонку и линию.
      * @param gCell который нужно установить.
-     * @param x колонка в которой нужно установить GCell.
-     * @param y строка в которой нужно установить GCell.
+     * @param x колонка в которой нужно установить GCellDefault.
+     * @param y строка в которой нужно установить GCellDefault.
      */
      void set(GCell gCell, int x, int y);
 
     /**
-     * Максимум GCell по x.
-     * @return максимум GCell по x.
+     * Максимум GCellDefault по x.
+     * @return максимум GCellDefault по x.
      */
      int getMaxX();
     /**
-     * Максимум GCell по y.
-     * @return максимум GCell по y.
+     * Максимум GCellDefault по y.
+     * @return максимум GCellDefault по y.
      */
      int getMaxY();
     

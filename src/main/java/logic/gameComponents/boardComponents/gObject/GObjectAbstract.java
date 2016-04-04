@@ -1,23 +1,21 @@
 package logic.gameComponents.boardComponents.gObject;
 
-import logic.gameComponents.GComponent;
-import logic.gameComponents.gPanel.GPanel;
 import logic.action.command.ReceiverAction;
+import logic.gameComponents.GComponentAbstract;
+import logic.gameComponents.gPanel.GPanel;
 import logic.resources.manager.ResManager;
-
-import java.util.HashMap;
 
 
 /**
  * Игровой обьект ноходящийся в клетку
  */
-public class GObject extends GComponent<GPanel> {
+public class GObjectAbstract extends GComponentAbstract<GPanel> {
     private ReceiverAction receiverAction;
 
     private int x;
     private int y;
 
-    public GObject() {
+    public GObjectAbstract() {
         GPanel panel = new GPanel();
         panel.setImageIcon(ResManager.getResManager().getImageIcon(2));
         setGPanel(panel);
@@ -49,7 +47,7 @@ public class GObject extends GComponent<GPanel> {
 
     @Override
     public String toString() {
-        return "GObject{" +
+        return "GObjectAbstract{" +
                 "x=" + x +
                 ", y=" + y +
                 '}';

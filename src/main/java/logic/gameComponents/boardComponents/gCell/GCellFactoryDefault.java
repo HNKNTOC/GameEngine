@@ -19,7 +19,7 @@ public class GCellFactoryDefault implements GCellFactory {
 
     @Override
     public GCell createGCell() {
-        GCell gCell = new GCell();
+        GCell gCell = new GCellDefault();
         GPanelCell panel = new GPanelCellInf(gCell);
         panel.setImageIcon(ResManager.getResManager().getImageIcon(1));
         gCell.setGPanel(panel);
