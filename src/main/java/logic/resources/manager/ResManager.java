@@ -7,8 +7,10 @@ import javax.swing.*;
 import java.util.HashMap;
 
 /**
- * Нужен для удобного полечения ресурсов.
- * Обиночка
+ * Нужен для удобного получения ресурсов.
+ * Хранит картинки в HashMap к каждой картинке есть id ключ с помощью которого можно получить эту картинку.
+ *
+ * Одиночка
  */
 public class ResManager {
     private static final Logger logger = LogManager.getLogger(ResManager.class);
@@ -27,18 +29,32 @@ public class ResManager {
 
     private ResManager() {
         map = new HashMap<>();
-        logger.info("Create");
+        logger.info("Create ResManager");
     }
 
+    /**
+     * Получить картинку по её ключу id.
+     *
+     * @param id ключ картинки.
+     * @return картинка соответствующая этому ключу.
+     * null если ключ не соответствует картинке.
+     */
     public ImageIcon getImageIcon(int id){
         logger.debug("getImageIcon");
         return map.get(id);
     }
 
-    public void putImageIcon(ImageIcon image){
+    /**
+     * Добавляет картинку.
+     *
+     * @param image картинку которую нужно добавить.
+     * @return ключ картинки по которому можно получить её.
+     */
+    public int putImageIcon(ImageIcon image){
         map.put(thisIdImageIcon,image);
         thisIdImageIcon++;
         logger.debug("putImageIcon id="+thisIdImageIcon);
+        return thisIdImageIcon;
     }
 
     public static ResManager getResManager(){
