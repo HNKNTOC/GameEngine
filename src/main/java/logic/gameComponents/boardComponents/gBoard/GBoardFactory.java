@@ -4,9 +4,20 @@ import logic.gameComponents.boardComponents.gCell.GCell;
 import logic.gameComponents.boardComponents.gCell.list.ListGCell;
 
 /**
- * Created by Nikita on 19.02.2016.
+ * Интерфейс фабрика для создания GBoard
  */
 public interface GBoardFactory {
+    /**
+     * Создаёт GBoard.
+     *
+     * @return созданный GBoard.
+     */
     GBoard createGBoard(int x, int y);
+
+    /**
+     * Создаёт GBoard.
+     *
+     * @return созданный GBoard.
+     */
     GBoard createGBoard(ListGCell<GCell> listGCell);
 }

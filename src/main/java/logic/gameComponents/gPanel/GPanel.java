@@ -1,33 +1,33 @@
 package logic.gameComponents.gPanel;
+
+import logic.dynamicValues.Dynamic;
+import logic.dynamicValues.DynamicParameter;
+import logic.dynamicValues.DynamicParameterMap;
 import logic.resources.manager.ResManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.HashMap;
 
 /**
  * Супер класс для всех GPanel.
  * Настраивает JPanel для отрисовки GComponentAbstract.
  */
-public class GPanel extends JPanel {
+public class GPanel extends JPanel implements Dynamic {
     private ImageIcon image;
     private static final Logger logger = LogManager.getLogger(GPanel.class);
-    /**
-     * В данный Map записываются дополнительные параметры.
-     * String - имя параметра, Object значение параметра.
-     */
-    private HashMap<String, Object> map;
+
+    private DynamicParameter<String, String> parameter;
 
     public GPanel() {
-        map = new HashMap<>();
-        image = ResManager.getResManager().getImageIcon(0);
+        this.parameter = new DynamicParameterMap();
+        this.image = ResManager.getResManager().getImageIcon(0);
         logger.info("Create "+this.toString());
     }
 
     public GPanel(ImageIcon image) {
-        map = new HashMap<>();
+        this.parameter = new DynamicParameterMap();
         this.image = image;
         logger.info("Create "+this.toString());
     }
@@ -51,6 +51,11 @@ public class GPanel extends JPanel {
         }else {
             logger.warn("paintComponent image!=null");
         }
+    }
+
+    @Override
+    public DynamicParameter<String, String> getDynamicValues() {
+        return parameter;
     }
 
     @Override
