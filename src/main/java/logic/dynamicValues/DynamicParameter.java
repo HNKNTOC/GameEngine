@@ -20,6 +20,7 @@ public interface DynamicParameter<String, V> {
      *
      * @param name имя параметра
      * @return значение которое соответствует параметру.
+     *  null если не найдено соответствие.
      */
     V getParameter(String name);
 }
