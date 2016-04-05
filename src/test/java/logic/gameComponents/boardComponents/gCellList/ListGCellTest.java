@@ -6,7 +6,7 @@ import logic.gameComponents.boardComponents.gCell.GCellFactory;
 import logic.gameComponents.boardComponents.gCell.GCellFactoryDefault;
 import logic.gameComponents.boardComponents.gCell.list.HashMapPanelGCell;
 import logic.gameComponents.boardComponents.gCell.list.ListGCell;
-import logic.gameComponents.boardComponents.gObject.GObjectAbstract;
+import logic.gameComponents.boardComponents.gObject.GObject;
 import logic.gameComponents.gPanel.cell.GPanelCellFactory;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -73,7 +73,7 @@ public class ListGCellTest {
     @Test
     public void testSet() throws Exception {
         GCell gCell = factory.createGCell();
-        GObjectAbstract gObject = new GObjectAbstract();
+        GObject gObject = new GObject();
         gCell.setGObject(gObject);
 
         for(int i=0;i<10;i++){

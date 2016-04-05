@@ -13,7 +13,7 @@ import logic.gameComponents.boardComponents.gCell.GCellFactory;
 import logic.gameComponents.boardComponents.gCell.GCellFactoryDefault;
 import logic.gameComponents.boardComponents.gCell.list.HashMapPanelGCell;
 import logic.gameComponents.boardComponents.gCell.list.ListGCell;
-import logic.gameComponents.boardComponents.gObject.GObjectAbstract;
+import logic.gameComponents.boardComponents.gObject.GObject;
 import logic.gameComponents.gPanel.GPanelDefaultFactory;
 import logic.gameComponents.gPanel.cell.GPanelCellFactory;
 import logic.listeners.keyboard.KeyListenerMainPlayer;
@@ -53,7 +53,7 @@ public class MainStart {
         GBoard gBoard = GBoardFactory.createGBoard(listGCell);
 
 
-        GObjectAbstract player = new GObjectAbstract();
+        GObject player = new GObject();
         gBoard.getListGCell().get(5,5).setGObject(player);
         player.setX(5);
         player.setY(5);

@@ -1,16 +1,16 @@
 package logic.gameComponents.boardComponents.gCell;
 
 import logic.gameComponents.GComponent;
-import logic.gameComponents.boardComponents.gObject.GObjectAbstract;
+import logic.gameComponents.boardComponents.gObject.GObject;
 import logic.gameComponents.gPanel.cell.GPanelCell;
 
 /**
  * Базовый интерфейс для всех клеток.
  */
 public interface GCell extends GComponent<GPanelCell> {
-    GObjectAbstract getGObject();
+    GObject getGObject();
 
-    void setGObject(GObjectAbstract gObject);
+    void setGObject(GObject gObject);
 
     int getX();
 

@@ -1,25 +1,25 @@
 package logic.gameComponents.boardComponents.gCell;
 
 import logic.gameComponents.GComponentAbstract;
-import logic.gameComponents.boardComponents.gObject.GObjectAbstract;
+import logic.gameComponents.boardComponents.gObject.GObject;
 import logic.gameComponents.gPanel.cell.GPanelCell;
 
 /**
  * Базовый класс для всех клеток.
  */
 public abstract class GCellAbstract extends GComponentAbstract<GPanelCell> implements GCell {
-    private GObjectAbstract gObject;
+    private GObject gObject;
     private int x;
     private int y;
 
 
     @Override
-    public GObjectAbstract getGObject() {
+    public GObject getGObject() {
         return gObject;
     }
 
     @Override
-    public void setGObject(GObjectAbstract gObject) {
+    public void setGObject(GObject gObject) {
         this.gObject
                 = gObject;
         updateGPanel();

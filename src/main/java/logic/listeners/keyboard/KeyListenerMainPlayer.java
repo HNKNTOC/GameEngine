@@ -3,7 +3,7 @@ package logic.listeners.keyboard;
 
 import logic.action.command.ReceiverAction;
 import logic.action.command.gObject.command.CommandMove;
-import logic.gameComponents.boardComponents.gObject.GObjectAbstract;
+import logic.gameComponents.boardComponents.gObject.GObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,9 +16,9 @@ import java.awt.event.KeyListener;
 public class KeyListenerMainPlayer implements KeyListener {
 
     private static final Logger logger = LogManager.getLogger(KeyListenerMainPlayer.class);
-    private GObjectAbstract gObject;
+    private GObject gObject;
 
-    public KeyListenerMainPlayer(GObjectAbstract gObject) {
+    public KeyListenerMainPlayer(GObject gObject) {
         this.gObject = gObject;
     }
 

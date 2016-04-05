@@ -1,6 +1,6 @@
 import gui.JDisplay;
 import logic.gameComponents.boardComponents.gCell.GCellDefault;
-import logic.gameComponents.boardComponents.gObject.GObjectAbstract;
+import logic.gameComponents.boardComponents.gObject.GObject;
 import logic.gameComponents.gPanel.cell.GPanelCell;
 import logic.resources.loader.image.ImageLoader;
 import logic.resources.manager.ResManager;
@@ -23,7 +23,7 @@ public class TestGPanelCell {
         cell.setGPanel(new GPanelCell());
         cell.getGPanel().setImageIcon(ImageLoader.getImage("grass.jpg"));
 
-        GObjectAbstract player = new GObjectAbstract();
+        GObject player = new GObject();
         player.getGPanel().setImageIcon(ImageLoader.getImage("Player.png"));
 
         cell.setGObject(player);

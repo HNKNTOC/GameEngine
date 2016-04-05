@@ -7,7 +7,7 @@ import logic.action.command.ReceiverAction;
 import java.util.HashMap;
 
 /**
- * Реализация для GObjectAbstract.
+ * Реализация для GObject.
  */
 public class ReceiverGObject implements ReceiverAction {
     private HashMap<Integer,ActionCommand> map;

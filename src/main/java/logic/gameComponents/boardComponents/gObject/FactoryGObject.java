@@ -3,10 +3,10 @@ package logic.gameComponents.boardComponents.gObject;
 import java.util.ArrayList;
 
 /**
- * Фабрика для GObjectAbstract
+ * Фабрика для GObject
  */
 public interface FactoryGObject {
-    GObjectAbstract createGObject();
+    GObject createGObject();
 
-    ArrayList<GObjectAbstract> createGObject(int number);
+    ArrayList<GObject> createGObject(int number);
 }
