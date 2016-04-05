@@ -9,13 +9,13 @@ import logic.resources.manager.ResManager;
 /**
  * Игровой обьект ноходящийся в клетку
  */
-public class GObjectAbstract extends GComponentAbstract<GPanel> {
+public class GObject extends GComponentAbstract<GPanel> {
     private ReceiverAction receiverAction;
 
     private int x;
     private int y;
 
-    public GObjectAbstract() {
+    public GObject() {
         GPanel panel = new GPanel();
         panel.setImageIcon(ResManager.getResManager().getImageIcon(2));
         setGPanel(panel);
@@ -47,7 +47,7 @@ public class GObjectAbstract extends GComponentAbstract<GPanel> {
 
     @Override
     public String toString() {
-        return "GObjectAbstract{" +
+        return "GObject{" +
                 "x=" + x +
                 ", y=" + y +
                 '}';
