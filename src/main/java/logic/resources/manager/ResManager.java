@@ -40,7 +40,7 @@ public class ResManager {
      * null если ключ не соответствует картинке.
      */
     public ImageIcon getImageIcon(int id){
-        logger.debug("getImageIcon");
+        logger.debug("getImageIcon id=" + id);
         return map.get(id);
     }
 
