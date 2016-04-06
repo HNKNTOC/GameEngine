@@ -1,4 +1,4 @@
-package logic.gameComponents.generator;
+package com.GameEngine.logic.gameComponents.generator;
 
 /**
  * Генирирует id.

@@ -1,4 +1,4 @@
-package logic.resources.manager;
+package com.GameEngine.logic.resources.manager;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

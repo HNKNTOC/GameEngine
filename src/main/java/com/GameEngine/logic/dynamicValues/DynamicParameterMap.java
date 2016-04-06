@@ -1,4 +1,4 @@
-package logic.dynamicValues;
+package com.GameEngine.logic.dynamicValues;
 
 import java.util.HashMap;
 

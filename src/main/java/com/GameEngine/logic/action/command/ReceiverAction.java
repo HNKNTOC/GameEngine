@@ -1,4 +1,4 @@
-package logic.action.command;
+package com.GameEngine.logic.action.command;
 
 /**
  * Базовый интерфейс всех Receiver.

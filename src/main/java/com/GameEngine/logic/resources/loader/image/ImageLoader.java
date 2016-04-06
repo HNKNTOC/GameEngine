@@ -1,4 +1,4 @@
-package logic.resources.loader.image;
+package com.GameEngine.logic.resources.loader.image;
 
 import javax.swing.*;
 

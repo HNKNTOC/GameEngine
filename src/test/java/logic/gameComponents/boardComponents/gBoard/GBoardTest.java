@@ -1,9 +1,11 @@
 package logic.gameComponents.boardComponents.gBoard;
 
-import logic.gameComponents.boardComponents.gCell.GCellDefault;
-import logic.gameComponents.gPanel.GPanel;
-import logic.gameComponents.gPanel.GPanelDefaultFactory;
-import logic.gameComponents.gPanel.cell.GPanelCell;
+import com.GameEngine.logic.gameComponents.boardComponents.gBoard.GBoard;
+import com.GameEngine.logic.gameComponents.boardComponents.gBoard.GBoardFactoryDefault;
+import com.GameEngine.logic.gameComponents.boardComponents.gCell.GCellDefault;
+import com.GameEngine.logic.gameComponents.gPanel.GPanel;
+import com.GameEngine.logic.gameComponents.gPanel.GPanelDefaultFactory;
+import com.GameEngine.logic.gameComponents.gPanel.cell.GPanelCell;
 import org.junit.BeforeClass;
 import org.junit.Test;
 

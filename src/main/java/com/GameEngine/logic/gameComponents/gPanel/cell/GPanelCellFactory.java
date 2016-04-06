@@ -1,7 +1,7 @@
-package logic.gameComponents.gPanel.cell;
+package com.GameEngine.logic.gameComponents.gPanel.cell;
 
 
-import logic.gameComponents.gPanel.GPanelFactory;
+import com.GameEngine.logic.gameComponents.gPanel.GPanelFactory;
 
 /**
  * Created by Nikita on 31.03.2016.

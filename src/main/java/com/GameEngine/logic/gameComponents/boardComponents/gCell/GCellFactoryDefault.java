@@ -1,8 +1,8 @@
-package logic.gameComponents.boardComponents.gCell;
+package com.GameEngine.logic.gameComponents.boardComponents.gCell;
 
-import logic.gameComponents.gPanel.cell.GPanelCell;
-import logic.gameComponents.gPanel.cell.GPanelCellFactory;
-import logic.resources.manager.ResManager;
+import com.GameEngine.logic.gameComponents.gPanel.cell.GPanelCell;
+import com.GameEngine.logic.gameComponents.gPanel.cell.GPanelCellFactory;
+import com.GameEngine.logic.resources.manager.ResManager;
 
 import java.util.ArrayList;
 

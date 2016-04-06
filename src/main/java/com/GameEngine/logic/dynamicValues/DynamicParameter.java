@@ -1,4 +1,4 @@
-package logic.dynamicValues;
+package com.GameEngine.logic.dynamicValues;
 
 /**
  * Классы реализующие данный интерфейс должны хранить имя атрибута и его значение.

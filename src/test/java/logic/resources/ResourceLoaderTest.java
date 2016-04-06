@@ -1,6 +1,6 @@
 package logic.resources;
 
-import logic.resources.loader.image.ResourceLoader;
+import com.GameEngine.logic.resources.loader.image.ResourceLoader;
 import org.junit.Test;
 
 import java.net.URL;

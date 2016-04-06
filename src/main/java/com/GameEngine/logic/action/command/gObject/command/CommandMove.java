@@ -1,9 +1,9 @@
-package logic.action.command.gObject.command;
+package com.GameEngine.logic.action.command.gObject.command;
 
-import logic.action.command.CommandGObject;
-import logic.gameComponents.boardComponents.gBoard.GBoard;
-import logic.gameComponents.boardComponents.gCell.GCell;
-import logic.gameComponents.boardComponents.gObject.GObject;
+import com.GameEngine.logic.action.command.CommandGObject;
+import com.GameEngine.logic.gameComponents.boardComponents.gBoard.GBoard;
+import com.GameEngine.logic.gameComponents.boardComponents.gCell.GCell;
+import com.GameEngine.logic.gameComponents.boardComponents.gObject.GObject;
 
 /**
  * Created by Nikita on 18.03.2016.

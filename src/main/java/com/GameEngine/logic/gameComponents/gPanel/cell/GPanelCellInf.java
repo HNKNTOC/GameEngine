@@ -1,6 +1,6 @@
-package logic.gameComponents.gPanel.cell;
+package com.GameEngine.logic.gameComponents.gPanel.cell;
 
-import logic.gameComponents.boardComponents.gCell.GCell;
+import com.GameEngine.logic.gameComponents.boardComponents.gCell.GCell;
 
 import java.awt.*;
 

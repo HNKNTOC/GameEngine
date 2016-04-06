@@ -1,8 +1,8 @@
-package logic.action.command.gObject;
+package com.GameEngine.logic.action.command.gObject;
 
-import logic.action.command.ActionCommand;
-import logic.action.command.IncorrectlySetParameter;
-import logic.action.command.ReceiverAction;
+import com.GameEngine.logic.action.command.ActionCommand;
+import com.GameEngine.logic.action.command.IncorrectlySetParameter;
+import com.GameEngine.logic.action.command.ReceiverAction;
 
 import java.util.HashMap;
 

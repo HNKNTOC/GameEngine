@@ -1,4 +1,4 @@
-package logic.gameComponents;
+package com.GameEngine.logic.gameComponents;
 
 
 /**

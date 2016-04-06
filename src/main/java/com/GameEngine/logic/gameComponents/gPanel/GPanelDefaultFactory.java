@@ -1,4 +1,4 @@
-package logic.gameComponents.gPanel;
+package com.GameEngine.logic.gameComponents.gPanel;
 
 /**
  * Created by Nikita on 31.03.2016.

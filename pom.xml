@@ -46,7 +46,7 @@
                     <archive>
                         <manifest>
                             <mainClass>
-                                logic.MainStart
+                                com.GameEngine.logic.MainStart
                             </mainClass>
                         </manifest>
                     </archive>

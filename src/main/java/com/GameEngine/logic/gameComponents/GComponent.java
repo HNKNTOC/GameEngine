@@ -1,4 +1,4 @@
-package logic.gameComponents;
+package com.GameEngine.logic.gameComponents;
 
 /**
  * Интерфейс для всех игровых объектов которые должны отображаться на GBoard.

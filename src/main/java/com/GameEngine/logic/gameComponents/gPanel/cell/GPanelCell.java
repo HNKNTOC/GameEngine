@@ -1,9 +1,9 @@
-package logic.gameComponents.gPanel.cell;
+package com.GameEngine.logic.gameComponents.gPanel.cell;
 
-import logic.dynamicValues.Dynamic;
-import logic.dynamicValues.DynamicParameter;
-import logic.dynamicValues.DynamicParameterMap;
-import logic.gameComponents.gPanel.GPanel;
+import com.GameEngine.logic.dynamicValues.Dynamic;
+import com.GameEngine.logic.dynamicValues.DynamicParameter;
+import com.GameEngine.logic.dynamicValues.DynamicParameterMap;
+import com.GameEngine.logic.gameComponents.gPanel.GPanel;
 
 import java.awt.*;
 

@@ -1,13 +1,13 @@
 package logic.gameComponents.boardComponents.gCellList;
 
-import logic.gameComponents.boardComponents.gCell.GCell;
-import logic.gameComponents.boardComponents.gCell.GCellDefault;
-import logic.gameComponents.boardComponents.gCell.GCellFactory;
-import logic.gameComponents.boardComponents.gCell.GCellFactoryDefault;
-import logic.gameComponents.boardComponents.gCell.list.HashMapPanelGCell;
-import logic.gameComponents.boardComponents.gCell.list.ListGCell;
-import logic.gameComponents.boardComponents.gObject.GObject;
-import logic.gameComponents.gPanel.cell.GPanelCellFactory;
+import com.GameEngine.logic.gameComponents.boardComponents.gCell.GCell;
+import com.GameEngine.logic.gameComponents.boardComponents.gCell.GCellDefault;
+import com.GameEngine.logic.gameComponents.boardComponents.gCell.GCellFactory;
+import com.GameEngine.logic.gameComponents.boardComponents.gCell.GCellFactoryDefault;
+import com.GameEngine.logic.gameComponents.boardComponents.gCell.list.HashMapPanelGCell;
+import com.GameEngine.logic.gameComponents.boardComponents.gCell.list.ListGCell;
+import com.GameEngine.logic.gameComponents.boardComponents.gObject.GObject;
+import com.GameEngine.logic.gameComponents.gPanel.cell.GPanelCellFactory;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;

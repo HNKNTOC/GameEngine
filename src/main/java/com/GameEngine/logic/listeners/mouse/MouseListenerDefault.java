@@ -1,7 +1,7 @@
-package logic.listeners.mouse;
+package com.GameEngine.logic.listeners.mouse;
 
 
-import logic.gameComponents.gPanel.cell.GPanelCell;
+import com.GameEngine.logic.gameComponents.gPanel.cell.GPanelCell;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;

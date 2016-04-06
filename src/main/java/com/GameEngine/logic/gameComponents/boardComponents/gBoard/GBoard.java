@@ -1,10 +1,10 @@
-package logic.gameComponents.boardComponents.gBoard;
+package com.GameEngine.logic.gameComponents.boardComponents.gBoard;
 
-import logic.gameComponents.GComponentAbstract;
-import logic.gameComponents.boardComponents.gCell.GCell;
-import logic.gameComponents.boardComponents.gCell.list.HashMapPanelGCell;
-import logic.gameComponents.boardComponents.gCell.list.ListGCell;
-import logic.gameComponents.gPanel.GPanel;
+import com.GameEngine.logic.gameComponents.GComponentAbstract;
+import com.GameEngine.logic.gameComponents.boardComponents.gCell.GCell;
+import com.GameEngine.logic.gameComponents.boardComponents.gCell.list.HashMapPanelGCell;
+import com.GameEngine.logic.gameComponents.boardComponents.gCell.list.ListGCell;
+import com.GameEngine.logic.gameComponents.gPanel.GPanel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -1,9 +1,9 @@
-package logic.gameComponents.boardComponents.gObject;
+package com.GameEngine.logic.gameComponents.boardComponents.gObject;
 
-import logic.action.command.ReceiverAction;
-import logic.gameComponents.GComponentAbstract;
-import logic.gameComponents.gPanel.GPanel;
-import logic.resources.manager.ResManager;
+import com.GameEngine.logic.action.command.ReceiverAction;
+import com.GameEngine.logic.gameComponents.GComponentAbstract;
+import com.GameEngine.logic.gameComponents.gPanel.GPanel;
+import com.GameEngine.logic.resources.manager.ResManager;
 
 
 /**

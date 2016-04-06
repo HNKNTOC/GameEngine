@@ -1,8 +1,8 @@
-package logic.gameComponents.boardComponents.gCell;
+package com.GameEngine.logic.gameComponents.boardComponents.gCell;
 
-import logic.gameComponents.GComponent;
-import logic.gameComponents.boardComponents.gObject.GObject;
-import logic.gameComponents.gPanel.cell.GPanelCell;
+import com.GameEngine.logic.gameComponents.GComponent;
+import com.GameEngine.logic.gameComponents.boardComponents.gObject.GObject;
+import com.GameEngine.logic.gameComponents.gPanel.cell.GPanelCell;
 
 /**
  * Базовый интерфейс для всех клеток.

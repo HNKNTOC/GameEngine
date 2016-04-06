@@ -1,6 +1,6 @@
-package logic.gameComponents.boardComponents.gCell.list;
+package com.GameEngine.logic.gameComponents.boardComponents.gCell.list;
 
-import logic.gameComponents.GList;
+import com.GameEngine.logic.gameComponents.GList;
 
 /**
  * Интерфейс для удобного хранения GCellDefault.

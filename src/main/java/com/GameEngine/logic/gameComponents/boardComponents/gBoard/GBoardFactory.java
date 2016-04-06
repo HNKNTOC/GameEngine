@@ -1,7 +1,7 @@
-package logic.gameComponents.boardComponents.gBoard;
+package com.GameEngine.logic.gameComponents.boardComponents.gBoard;
 
-import logic.gameComponents.boardComponents.gCell.GCell;
-import logic.gameComponents.boardComponents.gCell.list.ListGCell;
+import com.GameEngine.logic.gameComponents.boardComponents.gCell.GCell;
+import com.GameEngine.logic.gameComponents.boardComponents.gCell.list.ListGCell;
 
 /**
  * Интерфейс фабрика для создания GBoard

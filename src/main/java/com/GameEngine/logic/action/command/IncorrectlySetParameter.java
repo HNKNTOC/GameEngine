@@ -1,4 +1,4 @@
-package logic.action.command;
+package com.GameEngine.logic.action.command;
 
 /**
  * Исключение возникающее если заданный параметр не был найден.

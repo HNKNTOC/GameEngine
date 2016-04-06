@@ -1,4 +1,4 @@
-package logic.gameComponents.boardComponents.gCell;
+package com.GameEngine.logic.gameComponents.boardComponents.gCell;
 
 
 /**

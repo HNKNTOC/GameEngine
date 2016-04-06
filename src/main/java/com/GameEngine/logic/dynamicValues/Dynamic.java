@@ -1,4 +1,4 @@
-package logic.dynamicValues;
+package com.GameEngine.logic.dynamicValues;
 
 /**
  * Реализация данного интерфейса позволяет классу иметь динамические данные.

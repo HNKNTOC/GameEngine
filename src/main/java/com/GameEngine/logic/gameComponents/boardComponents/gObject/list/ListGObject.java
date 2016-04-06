@@ -1,6 +1,6 @@
-package logic.gameComponents.boardComponents.gObject.list;
+package com.GameEngine.logic.gameComponents.boardComponents.gObject.list;
 
-import logic.gameComponents.GList;
+import com.GameEngine.logic.gameComponents.GList;
 
 
 /**

@@ -1,9 +1,9 @@
-package logic.gameComponents.gPanel;
+package com.GameEngine.logic.gameComponents.gPanel;
 
-import logic.dynamicValues.Dynamic;
-import logic.dynamicValues.DynamicParameter;
-import logic.dynamicValues.DynamicParameterMap;
-import logic.resources.manager.ResManager;
+import com.GameEngine.logic.dynamicValues.Dynamic;
+import com.GameEngine.logic.dynamicValues.DynamicParameter;
+import com.GameEngine.logic.dynamicValues.DynamicParameterMap;
+import com.GameEngine.logic.resources.manager.ResManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

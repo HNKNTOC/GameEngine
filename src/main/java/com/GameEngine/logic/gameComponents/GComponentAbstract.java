@@ -1,9 +1,9 @@
-package logic.gameComponents;
+package com.GameEngine.logic.gameComponents;
 
-import logic.dynamicValues.Dynamic;
-import logic.dynamicValues.DynamicParameter;
-import logic.dynamicValues.DynamicParameterMap;
-import logic.gameComponents.generator.GeneratorId;
+import com.GameEngine.logic.dynamicValues.Dynamic;
+import com.GameEngine.logic.dynamicValues.DynamicParameter;
+import com.GameEngine.logic.dynamicValues.DynamicParameterMap;
+import com.GameEngine.logic.gameComponents.generator.GeneratorId;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

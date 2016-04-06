@@ -1,7 +1,7 @@
-package logic.gameComponents.boardComponents.gCell.list;
+package com.GameEngine.logic.gameComponents.boardComponents.gCell.list;
 
 
-import logic.gameComponents.boardComponents.gCell.GCell;
+import com.GameEngine.logic.gameComponents.boardComponents.gCell.GCell;
 
 import java.util.Iterator;
 import java.util.LinkedHashMap;
