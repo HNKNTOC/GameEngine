@@ -28,8 +28,6 @@ public class GBoard extends GComponentAbstract<GPanel> {
 
     public GBoard(ListGCell<GCell> listGCell) {
         this.listGCell = listGCell;
-        int x = listGCell.getMaxX();
-        int y = listGCell.getMaxY();
         logger.info("Created " + toString());
     }
 
