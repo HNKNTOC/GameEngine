@@ -18,6 +18,7 @@ import com.GameEngine.logic.gameComponents.gPanel.GPanelDefaultFactory;
 import com.GameEngine.logic.gameComponents.gPanel.cell.GPanelCellFactory;
 import com.GameEngine.logic.listeners.keyboard.KeyListenerMainPlayer;
 import com.GameEngine.logic.listeners.mouse.MouseListenerDefault;
+import com.GameEngine.logic.resources.LoaderLog4jConfig;
 import com.GameEngine.logic.resources.loader.image.ImageLoader;
 import com.GameEngine.logic.resources.manager.ResManager;
 
@@ -31,6 +32,8 @@ public class MainStart {
     public static void main(String[] args) {
         int x = 10;
         int y = 10;
+
+        LoaderLog4jConfig.loadConfig();
 
 
         //Загрузка Image

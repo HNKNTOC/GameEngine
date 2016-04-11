@@ -32,24 +32,17 @@ public abstract class GComponentAbstract<GPanel> implements GComponent<GPanel>, 
      */
     public GComponentAbstract() {
         generateId();
-        logger.info("Create " + this.toString());
-    }
-
-    /**
-     * Создание GComponentAbstract с переменными параметрами.
-     *
-     * @param gPanel которая будет отображать данный GComponentAbstract.
-     */
-    public GComponentAbstract(GPanel gPanel) {
-        generateId();
         this.mapParameter = new DynamicParameterMap();
-        this.gPanel = gPanel;
         logger.info("Create " + this.toString());
     }
 
     @Override
     public DynamicParameter<String, String> getDynamicValues() {
         return mapParameter;
+    }
+
+    public void setMapParameter(DynamicParameterMap mapParameter) {
+        this.mapParameter = mapParameter;
     }
 
     @Override

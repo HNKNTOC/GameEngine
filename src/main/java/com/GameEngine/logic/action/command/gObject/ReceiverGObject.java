@@ -24,8 +24,12 @@ public class ReceiverGObject implements ReceiverAction {
 
     @Override
     public boolean executeCommand(int slot) {
-            map.get(slot).execute();
-        return true;
+        ActionCommand command = map.get(slot);
+        if (command != null) {
+            command.execute();
+            return true;
+        }
+        return false;
     }
 
     @Override

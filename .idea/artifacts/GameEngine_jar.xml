@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="GameEngine:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/GameEngine_jar</output-path>
+    <root id="root">
+      <element id="archive" name="GameEngine.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="module-output" name="GameEngine" />
+      </element>
+      <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.3" />
+      <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.5" />
+      <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-core:2.5" />
+    </root>
+  </artifact>
+</component>

@@ -40,8 +40,9 @@ public class ResManager {
      * null если ключ не соответствует картинке.
      */
     public ImageIcon getImageIcon(int id){
-        logger.debug("getImageIcon id=" + id);
-        return map.get(id);
+        ImageIcon image = map.get(id);
+        logger.debug("getImageIcon " + image.getDescription() + " id=" + id);
+        return image;
     }
 
     /**
@@ -52,9 +53,10 @@ public class ResManager {
      */
     public int putImageIcon(ImageIcon image){
         map.put(thisIdImageIcon,image);
+        logger.debug("putImageIcon " + image.getDescription() + " id=" + thisIdImageIcon);
+        int oldId = thisIdImageIcon;
         thisIdImageIcon++;
-        logger.debug("putImageIcon id="+thisIdImageIcon);
-        return thisIdImageIcon;
+        return oldId;
     }
 
     public static ResManager getResManager(){

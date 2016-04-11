@@ -1,5 +1,7 @@
 package com.GameEngine.logic.resources.loader.image;
 
+import com.GameEngine.logic.resources.loader.ResourceLoader;
+
 import javax.swing.*;
 
 /**
