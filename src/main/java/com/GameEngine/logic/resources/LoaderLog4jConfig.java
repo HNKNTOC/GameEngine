@@ -14,7 +14,7 @@ public class LoaderLog4jConfig {
     public static void loadConfig() {
         LoggerContext context = (org.apache.logging.log4j.core.LoggerContext) LogManager.getContext(false);
         try {
-            context.setConfigLocation(loader.getResource("configuration/Log4j2.xml").toURI());
+            context.setConfigLocation(loader.getResource("Log4j2.xml").toURI());
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }

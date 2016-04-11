@@ -41,7 +41,7 @@ public class ResManager {
      */
     public ImageIcon getImageIcon(int id){
         ImageIcon image = map.get(id);
-        logger.debug("getImageIcon " + image.getDescription() + " id=" + id);
+        logger.debug("getImageIcon " + image + " id=" + id);
         return image;
     }
 
@@ -53,7 +53,7 @@ public class ResManager {
      */
     public int putImageIcon(ImageIcon image){
         map.put(thisIdImageIcon,image);
-        logger.debug("putImageIcon " + image.getDescription() + " id=" + thisIdImageIcon);
+        logger.debug("putImageIcon " + image + " id=" + thisIdImageIcon);
         int oldId = thisIdImageIcon;
         thisIdImageIcon++;
         return oldId;
