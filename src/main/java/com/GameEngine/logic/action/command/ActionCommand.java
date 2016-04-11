@@ -8,7 +8,7 @@ public interface ActionCommand {
     /**
      * Выполнить команду.
      */
-    void execute();
+    boolean execute();
 
     /**
      * Задать параметры для команды.

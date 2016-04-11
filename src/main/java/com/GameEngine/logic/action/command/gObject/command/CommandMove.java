@@ -31,12 +31,10 @@ public class CommandMove extends CommandGObject {
     }
 
     @Override
-    public void execute() {
+    public boolean execute() {
         String id = getValue(NAME_PARAMETER_ID_ACTION);
         int x = gObject.getX();
         int y = gObject.getY();
-
-        GCell oldCell = gBoard.getListGCell().get(x,y);
 
         switch (id){
             case "0": break;
@@ -46,12 +44,19 @@ public class CommandMove extends CommandGObject {
             case ACTION_MOVE_RIGHT: x++; break;
         }
         if (check(x,y)) {
-            GCell newCell = gBoard.getListGCell().get(x,y);
-            gObject.setX(x);
-            gObject.setY(y);
-            oldCell.setGObject(null);
-            newCell.setGObject(gObject);
+            move(x, y);
+            return true;
         }
+        return false;
+    }
+
+    private void move(int x, int y) {
+        GCell oldCell = gBoard.getListGCell().get(x, y);
+        GCell newCell = gBoard.getListGCell().get(x, y);
+        gObject.setX(x);
+        gObject.setY(y);
+        oldCell.setGObject(null);
+        newCell.setGObject(gObject);
     }
 
     /**
