@@ -1,7 +1,7 @@
 package com.GameEngine.logic.listeners.keyboard;
 
 
-import com.GameEngine.logic.action.command.ReceiverAction;
+import com.GameEngine.logic.action.command.ActionCommand;
 import com.GameEngine.logic.action.command.gObject.command.CommandMove;
 import com.GameEngine.logic.gameComponents.boardComponents.gObject.GObject;
 import org.apache.logging.log4j.LogManager;
@@ -28,25 +28,26 @@ public class KeyListenerMainPlayer implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        ReceiverAction receiver = gObject.getReceiverAction();
+        ActionCommand actionCommand = gObject.getReceiverAction().getActionCommand(0);
         logger.debug("Click "+e.getKeyCode());
 
         switch (e.getKeyCode()) {
             case KeyEvent.VK_UP:
-                receiver.setParameters(CommandMove.NAME_PARAMETER_ID_ACTION,CommandMove.ACTION_MOVE_UP,0);
+                actionCommand.setParameters(CommandMove.NAME_PARAMETER_ID_ACTION, CommandMove.ACTION_MOVE_UP);
                 break;
             case KeyEvent.VK_DOWN:
-                receiver.setParameters(CommandMove.NAME_PARAMETER_ID_ACTION,CommandMove.ACTION_MOVE_DOWN,0);
+                actionCommand.setParameters(CommandMove.NAME_PARAMETER_ID_ACTION, CommandMove.ACTION_MOVE_DOWN);
                 break;
             case KeyEvent.VK_LEFT:
-                receiver.setParameters(CommandMove.NAME_PARAMETER_ID_ACTION,CommandMove.ACTION_MOVE_LEFT,0);
+                actionCommand.setParameters(CommandMove.NAME_PARAMETER_ID_ACTION, CommandMove.ACTION_MOVE_LEFT);
                 break;
             case KeyEvent.VK_RIGHT:
-                receiver.setParameters(CommandMove.NAME_PARAMETER_ID_ACTION,CommandMove.ACTION_MOVE_RIGHT,0);
+                actionCommand.setParameters(CommandMove.NAME_PARAMETER_ID_ACTION, CommandMove.ACTION_MOVE_RIGHT);
                 break;
-            default: receiver.setParameters(CommandMove.NAME_PARAMETER_ID_ACTION,"0",0);
+            default:
+                actionCommand.setParameters(CommandMove.NAME_PARAMETER_ID_ACTION, "0");
         }
-        receiver.executeCommand(0);
+        actionCommand.execute();
     }
 
     @Override

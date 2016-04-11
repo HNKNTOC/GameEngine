@@ -1,7 +1,6 @@
 package com.GameEngine.logic.action.command.gObject;
 
 import com.GameEngine.logic.action.command.ActionCommand;
-import com.GameEngine.logic.action.command.IncorrectlySetParameter;
 import com.GameEngine.logic.action.command.ReceiverAction;
 
 import java.util.HashMap;
@@ -17,7 +16,7 @@ public class ReceiverGObject implements ReceiverAction {
     }
 
     @Override
-    public boolean addActionCommand(ActionCommand command, int slot) {
+    public boolean setActionCommand(ActionCommand command, int slot) {
         map.put(slot,command);
         return true;
     }
@@ -33,7 +32,7 @@ public class ReceiverGObject implements ReceiverAction {
     }
 
     @Override
-    public boolean setParameters(String nameParameters, String value, int slot) throws IncorrectlySetParameter {
-        return map.get(slot).setParameters(nameParameters,value);
+    public ActionCommand getActionCommand(int slot) {
+        return map.get(slot);
     }
 }

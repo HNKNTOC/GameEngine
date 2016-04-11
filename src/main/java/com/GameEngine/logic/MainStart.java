@@ -67,7 +67,7 @@ public class MainStart {
         commandMove.setParameters(CommandMove.NAME_PARAMETER_MAX_Y_MOVE,gBoard.getListGCell().getMaxY()+"");
 
         ReceiverAction receiver = new ReceiverGObject();
-        receiver.addActionCommand(commandMove,0);
+        receiver.setActionCommand(commandMove, 0);
         player.setReceiverAction(receiver);
 
         Display display = new JDisplay();

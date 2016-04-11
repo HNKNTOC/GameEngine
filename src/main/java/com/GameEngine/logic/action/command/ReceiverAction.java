@@ -6,30 +6,19 @@ package com.GameEngine.logic.action.command;
  */
 public interface ReceiverAction{
     /**
-     * Добавляет команду.
+     * Устанавливает в слот команду.
      * @param command команда.
      * @param slot слот в которую нужно поместить команду.
      * @return true если команда была добавлена успешно.
      *         false если команда не была добавлена.
      */
-    boolean addActionCommand(ActionCommand command,int slot);
+    boolean setActionCommand(ActionCommand command, int slot);
 
     /**
-     * Выполнить команду находящуюся в заданном слоте.
-     * @param slot слот в котором находится команда.
-     * @return true если команда была вызвана.
-     *         false если слот null.
+     * Возвращает ActionCommand.
+     * @param slot номер слота в котором лежит ActionCommand.
+     * @return ActionCommand соответствующий слоту
+     *  null если в слоте нет ActionCommand.
      */
-    boolean executeCommand(int slot);
-
-    /**
-     * Задать параметр для команды находящийся в заданном слоте.
-     * @param nameParameters имя параметра.
-     * @param value значение параметра.
-     * @param slot слот в котором находится команда.
-     * @return true если параметр был задан успешно.
-     *         false если слот null.
-     * @throws IncorrectlySetParameter если параметр был не найден или неверно задано значение параметра.
-     */
-    boolean setParameters(String nameParameters,String value,int slot) throws IncorrectlySetParameter;
+    ActionCommand getActionCommand(int slot);
 }
