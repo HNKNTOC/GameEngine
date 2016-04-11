@@ -22,16 +22,6 @@ public class ReceiverGObject implements ReceiverAction {
     }
 
     @Override
-    public boolean executeCommand(int slot) {
-        ActionCommand command = map.get(slot);
-        if (command != null) {
-            command.execute();
-            return true;
-        }
-        return false;
-    }
-
-    @Override
     public ActionCommand getActionCommand(int slot) {
         return map.get(slot);
     }
