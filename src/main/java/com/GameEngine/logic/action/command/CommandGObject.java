@@ -7,12 +7,27 @@ import java.util.HashMap;
  */
 public abstract class CommandGObject implements ActionCommand {
     /**
+     * Имя параметра. Если параметр содержит 0 команда не выполняется.
+     */
+    public static final String NAME_PARAMETER_COMMAND_ENABLE = "CommandEnable";
+    /**
      * Хранит имя параметра и его значение.
      */
     private HashMap<String,String> mapParameter;
 
     public CommandGObject() {
         mapParameter = new HashMap<>();
+        addNewParameter(NAME_PARAMETER_COMMAND_ENABLE, 1 + "");
+    }
+
+    /**
+     * Проверяед можно ли выполнить команду.
+     *
+     * @return false если нет true если да.
+     */
+    protected boolean checkEnable() {
+        int enable = Integer.parseInt(getValue(NAME_PARAMETER_COMMAND_ENABLE));
+        return enable != 0;
     }
 
     /**

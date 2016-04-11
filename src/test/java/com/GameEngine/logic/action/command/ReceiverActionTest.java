@@ -1,7 +1,7 @@
 package com.GameEngine.logic.action.command;
 
 import com.GameEngine.logic.action.command.gObject.ReceiverGObject;
-import com.GameEngine.logic.action.command.gObject.command.CommandMove;
+import com.GameEngine.logic.action.command.gObject.command.CommandMoveDefault;
 import org.junit.Test;
 
 import java.util.Random;
@@ -15,7 +15,7 @@ public class ReceiverActionTest {
     @Test
     public void setAndGetActionCommand() throws Exception {
         ReceiverAction receiverAction = new ReceiverGObject();
-        CommandMove command = new CommandMove(null, null);
+        CommandMoveDefault command = new CommandMoveDefault(null, null);
         int slot = new Random().nextInt();
         receiverAction.setActionCommand(command, slot);
         assertTrue(receiverAction.getActionCommand(slot) == command);

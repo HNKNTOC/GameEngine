@@ -4,7 +4,7 @@ import com.GameEngine.gui.Display;
 import com.GameEngine.gui.JDisplay;
 import com.GameEngine.logic.action.command.ReceiverAction;
 import com.GameEngine.logic.action.command.gObject.ReceiverGObject;
-import com.GameEngine.logic.action.command.gObject.command.CommandMove;
+import com.GameEngine.logic.action.command.gObject.command.CommandMoveDefault;
 import com.GameEngine.logic.gameComponents.boardComponents.gBoard.GBoard;
 import com.GameEngine.logic.gameComponents.boardComponents.gBoard.GBoardFactory;
 import com.GameEngine.logic.gameComponents.boardComponents.gBoard.GBoardFactoryDefault;
@@ -62,12 +62,12 @@ public class MainStart {
         player.setY(5);
 
         //Создание и настройка команды.
-        CommandMove commandMove = new CommandMove(player,gBoard);
-        commandMove.setParameters(CommandMove.NAME_PARAMETER_MAX_X_MOVE,gBoard.getListGCell().getMaxX()+"");
-        commandMove.setParameters(CommandMove.NAME_PARAMETER_MAX_Y_MOVE,gBoard.getListGCell().getMaxY()+"");
+        CommandMoveDefault commandMoveDefault = new CommandMoveDefault(player, gBoard);
+        commandMoveDefault.setParameters(CommandMoveDefault.NAME_PARAMETER_MAX_X, gBoard.getListGCell().getMaxX() + "");
+        commandMoveDefault.setParameters(CommandMoveDefault.NAME_PARAMETER_MAX_Y, gBoard.getListGCell().getMaxY() + "");
 
         ReceiverAction receiver = new ReceiverGObject();
-        receiver.setActionCommand(commandMove, 0);
+        receiver.setActionCommand(commandMoveDefault, 0);
         player.setReceiverAction(receiver);
 
         Display display = new JDisplay();
