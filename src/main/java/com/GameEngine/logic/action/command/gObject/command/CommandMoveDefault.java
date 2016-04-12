@@ -14,8 +14,6 @@ public class CommandMoveDefault extends CommandMoveAbstract {
 
     @Override
     protected boolean check(int x, int y) {
-        return (x < Integer.parseInt(getValue(CommandMoveDefault.NAME_PARAMETER_MAX_X))
-                & y < Integer.parseInt(getValue(CommandMoveDefault.NAME_PARAMETER_MAX_Y))
-                & x >= 0 & y >= 0);
+        return true;
     }
 }

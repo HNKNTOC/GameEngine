@@ -59,7 +59,7 @@ public abstract class CommandMoveAbstract extends CommandGObject {
         int x = Integer.parseInt(getValue(NAME_PARAMETER_X));
         int y = Integer.parseInt(getValue(NAME_PARAMETER_Y));
 
-        if (!check(x, y)) return false;
+        if (!(check(x, y) & checkMaxX(x) & checkMaxY(y))) return false;
         move(x, y, oldX, oldY);
         return true;
     }
@@ -82,9 +82,31 @@ public abstract class CommandMoveAbstract extends CommandGObject {
     }
 
     /**
-     * Проверяет превышает ли x и y максимум и уходят ли они в минус.
+     * Проверяет выходит ли x за рамки поля.
      *
+     * @param x координату x которую нужно проверить.
+     * @return false если координата выходит за рамки поля.
+     */
+    private boolean checkMaxX(int x) {
+        return x < Integer.parseInt(getValue(CommandMoveDefault.NAME_PARAMETER_MAX_X)) & x >= 0;
+    }
+
+    /**
+     * Проверяет выходит ли y за рамки поля.
+     *
+     * @param y координату y которую нужно проверить.
+     * @return false если координата выходит за рамки поля.
+     */
+    private boolean checkMaxY(int y) {
+        return y < Integer.parseInt(getValue(CommandMoveDefault.NAME_PARAMETER_MAX_Y)) & y >= 0;
+    }
+
+    /**
+     * Проверяет можно ли передвинуть gObject на новые координаты.
      * @return false если sizeColumn или sizeRows превышают максимум или уходят в минус.
+     * @param x координата на которую нужно передвинуть gObject.
+     * @param y ордината на которую нужно передвинуть gObject.
+     * @return если false координаты не прошли проверку и не будут передвинуты.
      */
     protected abstract boolean check(int x, int y);
 
