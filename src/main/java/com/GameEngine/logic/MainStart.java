@@ -72,8 +72,8 @@ public class MainStart {
 
         Display display = new JDisplay();
 
-        display.addKeyListener(new KeyListenerMainPlayer(player));
-        display.addKeyListener(new KeyListener() {
+        display.getJFrame().addKeyListener(new KeyListenerMainPlayer(player));
+        display.getJFrame().addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
 

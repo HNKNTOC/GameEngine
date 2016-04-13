@@ -46,4 +46,9 @@ public class JDisplay extends JFrame implements Display {
     public void showPanel(JPanel jPanel) {
         add(jPanel);
     }
+
+    @Override
+    public JFrame getJFrame() {
+        return this;
+    }
 }

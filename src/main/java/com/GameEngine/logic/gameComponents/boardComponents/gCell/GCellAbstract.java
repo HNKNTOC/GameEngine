@@ -33,6 +33,7 @@ public abstract class GCellAbstract extends GComponentAbstract<GPanelCell> imple
     @Override
     public void setX(int x) {
         this.x = x;
+        updateGPanel();
     }
 
     @Override
@@ -43,6 +44,7 @@ public abstract class GCellAbstract extends GComponentAbstract<GPanelCell> imple
     @Override
     public void setY(int y) {
         this.y = y;
+        updateGPanel();
     }
 
     /**
