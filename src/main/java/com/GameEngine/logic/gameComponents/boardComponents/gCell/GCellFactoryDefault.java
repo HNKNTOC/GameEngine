@@ -2,6 +2,7 @@ package com.GameEngine.logic.gameComponents.boardComponents.gCell;
 
 import com.GameEngine.logic.gameComponents.gPanel.cell.GPanelCell;
 import com.GameEngine.logic.gameComponents.gPanel.cell.GPanelCellFactory;
+import com.GameEngine.logic.resources.ImageName;
 import com.GameEngine.logic.resources.manager.ResManager;
 
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class GCellFactoryDefault implements GCellFactory {
     public GCell createGCell() {
         GCell gCell = new GCellDefault();
         GPanelCell panel = factory.createGPanel();
-        panel.setImageIcon(ResManager.getResManager().getImageIcon(1));
+        panel.setImageIcon(ResManager.getResManager().getImageIcon(ImageName.CELL));
         gCell.setGPanel(panel);
         return gCell;
     }

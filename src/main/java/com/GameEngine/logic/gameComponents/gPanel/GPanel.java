@@ -3,6 +3,7 @@ package com.GameEngine.logic.gameComponents.gPanel;
 import com.GameEngine.logic.dynamicValues.Dynamic;
 import com.GameEngine.logic.dynamicValues.DynamicParameter;
 import com.GameEngine.logic.dynamicValues.DynamicParameterMap;
+import com.GameEngine.logic.resources.ImageName;
 import com.GameEngine.logic.resources.manager.ResManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,7 +23,7 @@ public class GPanel extends JPanel implements Dynamic {
 
     public GPanel() {
         this.parameter = new DynamicParameterMap();
-        this.image = ResManager.getResManager().getImageIcon(0);
+        this.image = ResManager.getResManager().getImageIcon(ImageName.NULL);
         logger.info("Create "+this.toString());
     }
 

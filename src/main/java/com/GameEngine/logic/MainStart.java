@@ -18,6 +18,7 @@ import com.GameEngine.logic.gameComponents.gPanel.GPanelDefaultFactory;
 import com.GameEngine.logic.gameComponents.gPanel.cell.GPanelCellFactory;
 import com.GameEngine.logic.listeners.keyboard.KeyListenerMainPlayer;
 import com.GameEngine.logic.listeners.mouse.MouseListenerDefault;
+import com.GameEngine.logic.resources.ImageName;
 import com.GameEngine.logic.resources.LoaderLog4jConfig;
 import com.GameEngine.logic.resources.loader.image.ImageLoader;
 import com.GameEngine.logic.resources.manager.ResManager;
@@ -38,9 +39,9 @@ public class MainStart {
 
         //Загрузка Image
         ResManager resManager = ResManager.getResManager();
-        resManager.putImageIcon(ImageLoader.getImage("null.jpg"));
-        resManager.putImageIcon(ImageLoader.getImage("grass.jpg"));
-        resManager.putImageIcon(ImageLoader.getImage("Player.png"));
+        resManager.putImageIcon(ImageLoader.getImage(ImageName.NULL));
+        resManager.putImageIcon(ImageLoader.getImage(ImageName.CELL));
+        resManager.putImageIcon(ImageLoader.getImage(ImageName.OBJECT));
 
         //Создание и заполнение listGCell
         MouseListenerDefault listener = new MouseListenerDefault();

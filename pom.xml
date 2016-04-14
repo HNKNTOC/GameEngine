@@ -6,7 +6,7 @@
 
     <groupId>HkCompany</groupId>
     <artifactId>GameEngine</artifactId>
-    <version>V2.2</version>
+    <version>3.1.0-alpha</version>
 
 
     <dependencies>

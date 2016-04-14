@@ -17,14 +17,14 @@ public class TestGPanelCell {
         ResManager resManager = ResManager.getResManager();
         resManager.putImageIcon(ImageLoader.getImage("null.jpg"));
         resManager.putImageIcon(ImageLoader.getImage("grass.jpg"));
-        resManager.putImageIcon(ImageLoader.getImage("Player.png"));
+        resManager.putImageIcon(ImageLoader.getImage("player.png"));
 
         GCellDefault cell = new GCellDefault();
         cell.setGPanel(new GPanelCell());
         cell.getGPanel().setImageIcon(ImageLoader.getImage("grass.jpg"));
 
         GObject player = new GObject();
-        player.getGPanel().setImageIcon(ImageLoader.getImage("Player.png"));
+        player.getGPanel().setImageIcon(ImageLoader.getImage("player.png"));
 
         cell.setGObject(player);
 
