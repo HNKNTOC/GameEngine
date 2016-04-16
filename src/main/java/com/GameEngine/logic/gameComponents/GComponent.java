@@ -1,10 +1,12 @@
 package com.GameEngine.logic.gameComponents;
 
+import com.GameEngine.logic.dynamicValues.Dynamic;
+
 /**
  * Интерфейс для всех игровых объектов которые должны отображаться на GBoard.
  * Каждый GComponent должен иметь GPanel которая будет отображать этот GComponent.
  */
-public interface GComponent<GPanel> {
+public interface GComponent<GPanel> extends Dynamic {
     int getId();
 
     /**

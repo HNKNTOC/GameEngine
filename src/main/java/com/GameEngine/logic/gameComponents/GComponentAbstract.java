@@ -1,6 +1,5 @@
 package com.GameEngine.logic.gameComponents;
 
-import com.GameEngine.logic.dynamicValues.Dynamic;
 import com.GameEngine.logic.dynamicValues.DynamicParameter;
 import com.GameEngine.logic.dynamicValues.DynamicParameterMap;
 import com.GameEngine.logic.gameComponents.generator.GeneratorId;
@@ -10,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 /**
  * GComponentAbstract реализует основной функционал для GComponent.
  */
-public abstract class GComponentAbstract<GPanel> implements GComponent<GPanel>, Dynamic {
+public abstract class GComponentAbstract<GPanel> implements GComponent<GPanel> {
     private static final Logger logger = LogManager.getLogger(GComponentAbstract.class);
     /**
      * Панель которая будет отображать игровой компонент.
