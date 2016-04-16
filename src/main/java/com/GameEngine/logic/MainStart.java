@@ -23,9 +23,6 @@ import com.GameEngine.logic.resources.LoaderLog4jConfig;
 import com.GameEngine.logic.resources.loader.image.ImageLoader;
 import com.GameEngine.logic.resources.manager.ResManager;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-
 /**
  * Created by Nikita on 16.02.2016.
  */
@@ -74,30 +71,10 @@ public class MainStart {
         Display display = new JDisplay();
 
         display.getJFrame().addKeyListener(new KeyListenerMainPlayer(player));
-        display.getJFrame().addKeyListener(new KeyListener() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-
-            }
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-                if(e.getKeyCode()==32){
-                    gBoard.updateGCell();
-                }
-                if(e.getKeyCode()==66){
-                    gBoard.getGPanel().repaint();
-                }
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-            }
-        });
 
         display.showPanel(gBoard.getGPanel());
-        display.start();
         gBoard.getGPanel().setImageIcon(null);
         gBoard.updateGCell();
+        display.start();
     }
 }

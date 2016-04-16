@@ -79,6 +79,8 @@ public abstract class CommandMoveAbstract extends CommandGObject {
         newCell.setGObject(gObject);
         gObject.setX(x);
         gObject.setY(y);
+        oldCell.getGPanel().repaint();
+        newCell.getGPanel().repaint();
     }
 
     /**
