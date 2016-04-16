@@ -89,7 +89,7 @@ public abstract class CommandMoveAbstract extends CommandGObject {
      * @param x координату x которую нужно проверить.
      * @return false если координата выходит за рамки поля.
      */
-    private boolean checkMaxX(int x) {
+    protected boolean checkMaxX(int x) {
         return x < Integer.parseInt(getValue(CommandMoveDefault.NAME_PARAMETER_MAX_X)) & x >= 0;
     }
 
@@ -99,7 +99,7 @@ public abstract class CommandMoveAbstract extends CommandGObject {
      * @param y координату y которую нужно проверить.
      * @return false если координата выходит за рамки поля.
      */
-    private boolean checkMaxY(int y) {
+    protected boolean checkMaxY(int y) {
         return y < Integer.parseInt(getValue(CommandMoveDefault.NAME_PARAMETER_MAX_Y)) & y >= 0;
     }
 
