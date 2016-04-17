@@ -10,14 +10,8 @@ import com.GameEngine.logic.gameComponents.boardComponents.gObject.GObject;
  */
 public abstract class CommandMoveAbstract extends CommandGObject {
 
-    /**
-     * Имя параметра. Параметр содержит максимальное значение x.
-     */
-    public static final String NAME_PARAMETER_MAX_X = "maxX";
-    /**
-     * Имя параметра. Параметр содержит максимальное значение Y.
-     */
-    public static final String NAME_PARAMETER_MAX_Y = "maxY";
+    private int maxX;
+    private int maxY;
     /**
      * Имя параметра. Параметр содержит X на который нужно передвинуть gObject.
      */
@@ -43,10 +37,18 @@ public abstract class CommandMoveAbstract extends CommandGObject {
     public CommandMoveAbstract(GObject gObject, GBoard gBoard) {
         this.gObject = gObject;
         this.gBoard = gBoard;
-        addNewParameter(NAME_PARAMETER_MAX_X, 0 + "");
-        addNewParameter(NAME_PARAMETER_MAX_Y, 0 + "");
+        maxX = gBoard.getListGCell().getMaxX();
+        maxY = gBoard.getListGCell().getMaxY();
         addNewParameter(NAME_PARAMETER_X, 0 + "");
         addNewParameter(NAME_PARAMETER_Y, 0 + "");
+    }
+
+    public int getMaxX() {
+        return maxX;
+    }
+
+    public int getMaxY() {
+        return maxY;
     }
 
     @Override
@@ -90,7 +92,7 @@ public abstract class CommandMoveAbstract extends CommandGObject {
      * @return false если координата выходит за рамки поля.
      */
     protected boolean checkMaxX(int x) {
-        return x < Integer.parseInt(getValue(CommandMoveDefault.NAME_PARAMETER_MAX_X)) & x >= 0;
+        return x < maxX & x >= 0;
     }
 
     /**
@@ -100,7 +102,7 @@ public abstract class CommandMoveAbstract extends CommandGObject {
      * @return false если координата выходит за рамки поля.
      */
     protected boolean checkMaxY(int y) {
-        return y < Integer.parseInt(getValue(CommandMoveDefault.NAME_PARAMETER_MAX_Y)) & y >= 0;
+        return y < maxY & y >= 0;
     }
 
     /**

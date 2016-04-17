@@ -61,8 +61,6 @@ public class MainStart {
 
         //Создание и настройка команды.
         CommandMoveDefault commandMoveDefault = new CommandMoveDefault(player, gBoard);
-        commandMoveDefault.setParameters(CommandMoveDefault.NAME_PARAMETER_MAX_X, gBoard.getListGCell().getMaxX() + "");
-        commandMoveDefault.setParameters(CommandMoveDefault.NAME_PARAMETER_MAX_Y, gBoard.getListGCell().getMaxY() + "");
 
         ReceiverAction receiver = new ReceiverGObject();
         receiver.setActionCommand(commandMoveDefault, 0);
