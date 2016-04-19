@@ -56,6 +56,7 @@ public class MainStart {
 
         GObject player = new GObject();
         gBoard.getListGCell().get(5,5).setGObject(player);
+        player.getGPanel().setImageIcon(ResManager.getResManager().getImageIcon(ImageName.OBJECT));
         player.setX(5);
         player.setY(5);
 

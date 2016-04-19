@@ -35,8 +35,8 @@ public class CommandMoveAbstractTest {
 
     @BeforeClass
     public static void setUpClass() {
-        maxY = getRandom(19) + 1;
-        maxX = getRandom(19) + 1;
+        maxY = getRandom(19) + 2;
+        maxX = getRandom(19) + 2;
         logger.info("maxX=" + maxX + " maxY=" + maxY);
         GCellFactory GCellFactory = new GCellFactoryDefault(new GPanelCellFactory());
         ListGCell<GCell> listGCell = new HashMapPanelGCell(maxX, maxY);
@@ -45,15 +45,13 @@ public class CommandMoveAbstractTest {
         }
         gBoard = new GBoardFactoryDefault().createGBoard(listGCell);
         gObject = new GObject();
-        gObject.setX(randomX);
-        gObject.setY(randomY);
         command = new CommandMoveDefault(gObject, gBoard);
     }
 
     @Before
     public void setUp() {
-        randomX = getRandom(maxX);
-        randomY = getRandom(maxY);
+        randomX = getRandom(maxX - 1);
+        randomY = getRandom(maxY - 1);
         logger.info("randomX=" + randomX + " randomY=" + randomY);
     }
 
@@ -72,20 +70,21 @@ public class CommandMoveAbstractTest {
     public void move() {
         int oldX = gObject.getX();
         int oldY = gObject.getY();
+
         command.move(randomX, randomY, gObject.getX(), gObject.getY());
         assertTrue(checkMoving(randomX, randomY, oldX, oldY));
     }
 
     @Test
     public void checkMaxX() {
-        assertTrue(command.checkMaxX(maxX));
+        assertTrue(command.checkMaxX(maxX - 1));
         assertTrue(!command.checkMaxX(maxX + 1));
         assertTrue(!command.checkMaxX(-1));
     }
 
     @Test
     public void checkMaxY() {
-        assertTrue(command.checkMaxY(maxY));
+        assertTrue(command.checkMaxY(maxY - 1));
         assertTrue(!command.checkMaxY(maxY + 1));
         assertTrue(!command.checkMaxY(-1));
     }
@@ -93,8 +92,21 @@ public class CommandMoveAbstractTest {
 
     private boolean checkMoving(int randomX, int randomY, int oldX, int oldY) {
         ListGCell<GCell> listGCell = gBoard.getListGCell();
-        return listGCell.get(oldX, oldY).getGObject() == null &
-                listGCell.get(randomX, randomY).getGObject() == gObject;
+
+        if (randomX == oldX & randomY == oldY) {
+            logger.info("randomX==oldX & randomY==oldY)");
+            return true;
+        }
+
+        if (!(listGCell.get(oldX, oldY).getGObject() == null)) {
+            logger.info("old x=" + oldX + " y=" + oldY + " not == null");
+            return false;
+        }
+        if (!(listGCell.get(randomX, randomY).getGObject() == gObject)) {
+            logger.info("new x =" + randomX + " y =" + randomY + " not == gObject");
+            return false;
+        }
+        return true;
     }
 
     private static int getRandom(int bound) {
