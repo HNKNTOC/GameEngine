@@ -20,12 +20,17 @@ public abstract class CommandGObject implements ActionCommand {
         addNewParameter(NAME_PARAMETER_COMMAND_ENABLE, 1 + "");
     }
 
+    @Override
+    public boolean execute() {
+        return checkEnable();
+    }
+
     /**
      * Проверяед можно ли выполнить команду.
      *
      * @return false если нет true если да.
      */
-    protected boolean checkEnable() {
+    private boolean checkEnable() {
         int enable = Integer.parseInt(getValue(NAME_PARAMETER_COMMAND_ENABLE));
         return enable != 0;
     }

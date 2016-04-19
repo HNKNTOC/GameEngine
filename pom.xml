@@ -6,7 +6,7 @@
 
     <groupId>HkCompany</groupId>
     <artifactId>GameEngine</artifactId>
-    <version>3.1.4-alpha</version>
+    <version>3.1.5-alpha</version>
 
 
     <dependencies>
@@ -75,9 +75,6 @@
                     </archive>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
-
-
 </project>

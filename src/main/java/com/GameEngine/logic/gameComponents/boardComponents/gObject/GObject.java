@@ -3,12 +3,10 @@ package com.GameEngine.logic.gameComponents.boardComponents.gObject;
 import com.GameEngine.logic.action.command.ReceiverAction;
 import com.GameEngine.logic.gameComponents.GComponentAbstract;
 import com.GameEngine.logic.gameComponents.gPanel.GPanel;
-import com.GameEngine.logic.resources.ImageName;
-import com.GameEngine.logic.resources.manager.ResManager;
 
 
 /**
- * Игровой обьект ноходящийся в клетку
+ * Игровой обьект ноходящийся в клетке
  */
 public class GObject extends GComponentAbstract<GPanel> {
     private ReceiverAction receiverAction;
@@ -18,7 +16,6 @@ public class GObject extends GComponentAbstract<GPanel> {
 
     public GObject() {
         GPanel panel = new GPanel();
-        panel.setImageIcon(ResManager.getResManager().getImageIcon(ImageName.OBJECT));
         setGPanel(panel);
     }
 

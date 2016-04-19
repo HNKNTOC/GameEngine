@@ -43,17 +43,9 @@ public abstract class CommandMoveAbstract extends CommandGObject {
         addNewParameter(NAME_PARAMETER_Y, 0 + "");
     }
 
-    public int getMaxX() {
-        return maxX;
-    }
-
-    public int getMaxY() {
-        return maxY;
-    }
-
     @Override
     public boolean execute() {
-        if (!checkEnable()) {
+        if (!super.execute()) {
             return false;
         }
         final int oldX = gObject.getX();
@@ -92,7 +84,7 @@ public abstract class CommandMoveAbstract extends CommandGObject {
      * @return false если координата выходит за рамки поля.
      */
     protected boolean checkMaxX(int x) {
-        return x < maxX & x >= 0;
+        return x <= maxX & x >= 0;
     }
 
     /**
@@ -102,7 +94,7 @@ public abstract class CommandMoveAbstract extends CommandGObject {
      * @return false если координата выходит за рамки поля.
      */
     protected boolean checkMaxY(int y) {
-        return y < maxY & y >= 0;
+        return y <= maxY & y >= 0;
     }
 
     /**
