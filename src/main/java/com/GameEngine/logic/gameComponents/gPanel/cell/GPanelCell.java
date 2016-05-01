@@ -43,7 +43,7 @@ public class GPanelCell extends GPanel implements Dynamic {
     }
 
     private void createDynamicParameter() {
-        mapParameter.putParameter(PARAMETER_NAME_SELECTION, "0");
+        mapParameter.putParameterInt(PARAMETER_NAME_SELECTION, 0);
         mapParameter.putParameter(PARAMETER_NAME_SELECTION_COLOR, "0,0,0");
     }
 
@@ -80,7 +80,7 @@ public class GPanelCell extends GPanel implements Dynamic {
      */
     public void drawCircleCenter(Graphics g) {
         //Проверка равно ли значение в PARAMETER_NAME_SELECTION "1".
-        if (!getDynamicValues().getParameter(PARAMETER_NAME_SELECTION).equals("1")) return;
+        if (getDynamicValues().getParameterInt(PARAMETER_NAME_SELECTION) == 0) return;
         //Получение цвета из параметра PARAMETER_NAME_SELECTION.
         g.setColor(getColor(getDynamicValues().getParameter(PARAMETER_NAME_SELECTION_COLOR)));
         g.drawOval((getWidth() / 2) - 5, (getHeight() / 2) - 5, 10, 10);

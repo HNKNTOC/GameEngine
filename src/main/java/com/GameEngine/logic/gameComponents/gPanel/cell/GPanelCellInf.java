@@ -13,7 +13,7 @@ public class GPanelCellInf extends GPanelCell {
     public GPanelCellInf(GCell gCell) {
         super();
         this.gCell = gCell;
-        getDynamicValues().putParameter("Color", "0");
+        getDynamicValues().putParameterInt("Color", 0);
     }
 
     @Override

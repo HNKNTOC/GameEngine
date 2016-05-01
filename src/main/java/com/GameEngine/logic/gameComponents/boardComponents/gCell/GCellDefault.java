@@ -12,7 +12,7 @@ public class GCellDefault extends GCellAbstract {
         } else {
             getGPanel().setGPanelObject(getGObject().getGPanel());
         }
-        getGPanel().getDynamicValues().putParameter("X", getX() + "");
-        getGPanel().getDynamicValues().putParameter("Y", getY() + "");
+        getGPanel().getDynamicValues().putParameterInt("X", getX());
+        getGPanel().getDynamicValues().putParameterInt("Y", getY());
     }
 }

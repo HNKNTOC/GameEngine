@@ -28,12 +28,12 @@ public class MouseListenerDefault implements MouseListener {
     public void mouseReleased(MouseEvent e) {
         GPanelCell newPanel  =(GPanelCell) e.getComponent();
         if (thisPanel != null) {
-            thisPanel.getDynamicValues().putParameter(GPanelCell.PARAMETER_NAME_SELECTION, "0");
+            thisPanel.getDynamicValues().putParameterInt(GPanelCell.PARAMETER_NAME_SELECTION, 0);
             thisPanel.getDynamicValues().putParameter(GPanelCell.PARAMETER_NAME_SELECTION_COLOR, "0,0,0");
             thisPanel.repaint();
         }
         thisPanel = newPanel;
-        thisPanel.getDynamicValues().putParameter(GPanelCell.PARAMETER_NAME_SELECTION, "1");
+        thisPanel.getDynamicValues().putParameterInt(GPanelCell.PARAMETER_NAME_SELECTION, 1);
         thisPanel.getDynamicValues().putParameter(GPanelCell.PARAMETER_NAME_SELECTION_COLOR, "0,255,0");
         thisPanel.repaint();
     }
