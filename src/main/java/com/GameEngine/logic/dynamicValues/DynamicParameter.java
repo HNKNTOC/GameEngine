@@ -26,7 +26,7 @@ public interface DynamicParameter {
      * @return значение которое соответствует параметру.
      * null если не найдено соответствие.
      */
-    int getParameterInt(String name);
+    int getParameterInt(String name) throws NumberFormatException;
 
     /**
      * Добавляет новый параметр.
@@ -34,5 +34,5 @@ public interface DynamicParameter {
      * @param name  имя параметра.
      * @param value значение параметра.
      */
-    void putParameterInt(String name, int value);
+    void putParameterInt(String name, int value) throws NumberFormatException;
 }
