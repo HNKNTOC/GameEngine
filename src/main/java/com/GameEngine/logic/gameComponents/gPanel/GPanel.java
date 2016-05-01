@@ -19,7 +19,7 @@ public class GPanel extends JPanel implements Dynamic {
     private ImageIcon image;
     private static final Logger logger = LogManager.getLogger(GPanel.class);
 
-    private DynamicParameter<String, String> parameter;
+    private DynamicParameter parameter;
 
     public GPanel() {
         this.parameter = new DynamicParameterMap();
@@ -55,7 +55,7 @@ public class GPanel extends JPanel implements Dynamic {
     }
 
     @Override
-    public DynamicParameter<String, String> getDynamicValues() {
+    public DynamicParameter getDynamicValues() {
         return parameter;
     }
 

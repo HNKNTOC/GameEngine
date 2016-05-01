@@ -52,7 +52,7 @@ public class GPanelCell extends GPanel implements Dynamic {
     }
 
     @Override
-    public DynamicParameter<String, String> getDynamicValues() {
+    public DynamicParameter getDynamicValues() {
         return mapParameter;
     }
 

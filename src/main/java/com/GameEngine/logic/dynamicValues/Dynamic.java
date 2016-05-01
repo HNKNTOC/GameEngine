@@ -9,5 +9,5 @@ public interface Dynamic {
      *
      * @return DynamicParameter.
      */
-    DynamicParameter<String, String> getDynamicValues();
+    DynamicParameter getDynamicValues();
 }

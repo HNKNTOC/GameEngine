@@ -16,7 +16,7 @@ import static org.junit.Assert.assertTrue;
  */
 public class DynamicParameterTest {
 
-    private DynamicParameter<String, String> dParam = new DynamicParameterMap();
+    private DynamicParameter dParam = new DynamicParameterMap();
 
     private String param1 = getRandomParam();
     private String param2 = getRandomParam();
