@@ -11,7 +11,7 @@ import java.util.Random;
 
 import static org.junit.Assert.assertTrue;
 /**
- * Created by Nikita on 05.04.2016.
+ * Тест для GCell.
  */
 public class GCellTest {
 

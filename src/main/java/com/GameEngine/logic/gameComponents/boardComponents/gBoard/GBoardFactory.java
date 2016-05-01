@@ -9,14 +9,15 @@ import com.GameEngine.logic.gameComponents.boardComponents.gCell.list.ListGCell;
 public interface GBoardFactory {
     /**
      * Создаёт GBoard.
-     *
+     * @param x размер по x.
+     * @param y размер по y.
      * @return созданный GBoard.
      */
     GBoard createGBoard(int x, int y);
 
     /**
      * Создаёт GBoard.
-     *
+     * @param listGCell лист с GCell.
      * @return созданный GBoard.
      */
     GBoard createGBoard(ListGCell<GCell> listGCell);

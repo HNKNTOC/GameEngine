@@ -9,10 +9,11 @@ import com.GameEngine.logic.gameComponents.gPanel.cell.GPanelCell;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Created by Nikita on 31.03.2016.
+ * Тест для GBoard.
  */
 public class GBoardTest {
 
@@ -52,7 +53,7 @@ public class GBoardTest {
 
     @Test
     public void getGPanel() {
-        assertTrue(gBoard.getGPanel()!=null);
+        assertNotNull(gBoard.getGPanel());
     }
 
     @Test

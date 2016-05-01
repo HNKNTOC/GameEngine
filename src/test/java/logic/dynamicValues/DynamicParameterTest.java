@@ -8,10 +8,11 @@ import org.junit.Test;
 import java.util.Objects;
 import java.util.Random;
 
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Created by Nikita on 05.04.2016.
+ * Тест класса DynamicParameter
  */
 public class DynamicParameterTest {
 
@@ -41,7 +42,7 @@ public class DynamicParameterTest {
         assertTrue(Objects.equals(dParam.getParameter("param3"), param3));
         assertTrue(Objects.equals(dParam.getParameter("param4"), param4));
         assertTrue(Objects.equals(dParam.getParameter("param5"), param5));
-        assertTrue(dParam.getParameter("falseParam") == null);
+        assertNull(dParam.getParameter("falseParam"));
 
     }
 

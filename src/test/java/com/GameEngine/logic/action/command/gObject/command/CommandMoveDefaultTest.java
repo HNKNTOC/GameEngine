@@ -20,9 +20,9 @@ import java.util.Random;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Created by Nikita on 18.04.2016.
+ * Тест для CommandMoveDefault
  */
-public class CommandMoveAbstractTest {
+public class CommandMoveDefaultTest {
 
     private static int maxY;
     private static int maxX;
@@ -31,7 +31,7 @@ public class CommandMoveAbstractTest {
     private static GBoard gBoard;
     private static GObject gObject;
     private static CommandMoveAbstract command;
-    private static final Logger logger = LogManager.getLogger(CommandMoveAbstractTest.class);
+    private static final Logger logger = LogManager.getLogger(CommandMoveDefaultTest.class);
 
     @BeforeClass
     public static void setUpClass() {

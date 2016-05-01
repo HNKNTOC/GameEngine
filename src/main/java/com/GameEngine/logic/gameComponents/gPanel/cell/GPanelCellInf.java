@@ -5,11 +5,11 @@ import com.GameEngine.logic.gameComponents.boardComponents.gCell.GCell;
 import java.awt.*;
 
 /**
- * Created by Nikita on 16.02.2016.
+ * GPanelCellInf показывает дополнительную информацию о gCell графически.
+ * (Используется в основном во время разработки).
  */
 public class GPanelCellInf extends GPanelCell {
     private GCell gCell;
-
     public GPanelCellInf(GCell gCell) {
         super();
         this.gCell = gCell;
@@ -33,7 +33,7 @@ public class GPanelCellInf extends GPanelCell {
     }
 
     /**
-     * Получает цвет из динамическоло параметра Color.
+     * Получает цвет из динамического параметра Color.
      * 0 - red 1 - blue
      */
     private Color parsingColor() {

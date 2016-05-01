@@ -8,7 +8,7 @@ import com.GameEngine.logic.gameComponents.gPanel.GPanelDefaultFactory;
 import com.GameEngine.logic.gameComponents.gPanel.GPanelFactory;
 
 /**
- * Created by Nikita on 19.02.2016.
+ * Фабрика для создания GBoard.
  */
 public class GBoardFactoryDefault implements GBoardFactory {
     private GPanelFactory<GPanel> factory;

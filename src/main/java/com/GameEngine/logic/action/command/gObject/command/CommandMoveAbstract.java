@@ -99,10 +99,9 @@ public abstract class CommandMoveAbstract extends CommandGObject {
 
     /**
      * Проверяет можно ли передвинуть gObject на новые координаты.
-     * @return false если sizeColumn или sizeRows превышают максимум или уходят в минус.
      * @param x координата на которую нужно передвинуть gObject.
      * @param y ордината на которую нужно передвинуть gObject.
-     * @return если false координаты не прошли проверку и не будут передвинуты.
+     * @return false если sizeColumn или sizeRows превышают максимум или уходят в минус.
      */
     protected abstract boolean check(int x, int y);
 
