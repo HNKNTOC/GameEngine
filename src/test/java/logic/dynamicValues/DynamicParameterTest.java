@@ -66,12 +66,11 @@ public class DynamicParameterTest {
         assertTrue(dParam.getParameterInt("param3") == param3);
         assertTrue(dParam.getParameterInt("param4") == param4);
         assertTrue(dParam.getParameterInt("param5") == param5);
-        try {
-            dParam.getParameterInt("falseParam");
-            assertTrue(false);
-        } catch (NumberFormatException e) {
-            assertTrue(true);
-        }
+    }
+
+    @Test(expected = NumberFormatException.class)
+    public void putAndGetParameterIntException() throws Exception {
+        dParam.getParameterInt("falseParam");
     }
 
     private String getRandomParam() {
