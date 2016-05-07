@@ -13,34 +13,50 @@ public abstract class CommandMoveAbstract extends CommandGObject {
     private int maxX;
     private int maxY;
     /**
-     * Имя параметра. Параметр содержит X на который нужно передвинуть gObject.
+     * Имя параметра. Параметр содержит X на который нужно передвинуть object.
      */
     public static final String NAME_PARAMETER_X = "X";
     /**
-     * Имя параметра. Параметр содержит Y на который нужно передвинуть gObject.
+     * Имя параметра. Параметр содержит Y на который нужно передвинуть object.
      */
     public static final String NAME_PARAMETER_Y = "Y";
 
     /**
      * Объект который должен совершить действие.
      */
-    protected GObject gObject;
+    private GObject object;
     /**
-     * Доска на которой содержится gObject.
+     * Доска на которой содержится object.
      */
-    protected GBoard gBoard;
+    private GBoard board;
 
     /**
-     * @param gObject gObject который должен совершить действие.
-     * @param gBoard  gBoard на которой содержится gObject.
+     * @param object object который должен совершить действие.
+     * @param board  board на которой содержится object.
      */
-    public CommandMoveAbstract(GObject gObject, GBoard gBoard) {
-        this.gObject = gObject;
-        this.gBoard = gBoard;
-        maxX = gBoard.getListGCell().getMaxX();
-        maxY = gBoard.getListGCell().getMaxY();
+    public CommandMoveAbstract(GObject object, GBoard board) {
+        this.object = object;
+        this.board = board;
+        maxX = board.getListGCell().getMaxX();
+        maxY = board.getListGCell().getMaxY();
         addNewParameter(NAME_PARAMETER_X, 0 + "");
         addNewParameter(NAME_PARAMETER_Y, 0 + "");
+    }
+
+    public GObject getObject() {
+        return object;
+    }
+
+    public void setObject(GObject object) {
+        this.object = object;
+    }
+
+    public GBoard getBoard() {
+        return board;
+    }
+
+    public void setBoard(GBoard board) {
+        this.board = board;
     }
 
     @Override
@@ -48,8 +64,8 @@ public abstract class CommandMoveAbstract extends CommandGObject {
         if (!super.execute()) {
             return false;
         }
-        final int oldX = gObject.getX();
-        final int oldY = gObject.getY();
+        final int oldX = object.getX();
+        final int oldY = object.getY();
         int x = Integer.parseInt(getValue(NAME_PARAMETER_X));
         int y = Integer.parseInt(getValue(NAME_PARAMETER_Y));
 
@@ -59,20 +75,20 @@ public abstract class CommandMoveAbstract extends CommandGObject {
     }
 
     /**
-     * Передвигает gObject из одних клетки в другую.
+     * Передвигает object из одних клетки в другую.
      *
      * @param x    координата клетки в которую нужно передвинуть.
      * @param y    координата клетки в которую нужно передвинуть.
-     * @param oldX координата клетки из которой нужно передвинуть gObject.
-     * @param oldY координата клетки из которой нужно передвинуть gObject.
+     * @param oldX координата клетки из которой нужно передвинуть object.
+     * @param oldY координата клетки из которой нужно передвинуть object.
      */
     protected void move(int x, int y, int oldX, int oldY) {
-        GCell oldCell = gBoard.getListGCell().get(oldX, oldY);
-        GCell newCell = gBoard.getListGCell().get(x, y);
+        GCell oldCell = board.getListGCell().get(oldX, oldY);
+        GCell newCell = board.getListGCell().get(x, y);
         oldCell.setGObject(null);
-        newCell.setGObject(gObject);
-        gObject.setX(x);
-        gObject.setY(y);
+        newCell.setGObject(object);
+        object.setX(x);
+        object.setY(y);
         oldCell.getGPanel().repaint();
         newCell.getGPanel().repaint();
     }
@@ -98,9 +114,9 @@ public abstract class CommandMoveAbstract extends CommandGObject {
     }
 
     /**
-     * Проверяет можно ли передвинуть gObject на новые координаты.
-     * @param x координата на которую нужно передвинуть gObject.
-     * @param y ордината на которую нужно передвинуть gObject.
+     * Проверяет можно ли передвинуть object на новые координаты.
+     * @param x координата на которую нужно передвинуть object.
+     * @param y ордината на которую нужно передвинуть object.
      * @return false если sizeColumn или sizeRows превышают максимум или уходят в минус.
      */
     protected abstract boolean check(int x, int y);
