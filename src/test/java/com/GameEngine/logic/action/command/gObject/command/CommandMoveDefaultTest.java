@@ -9,8 +9,8 @@ import com.GameEngine.logic.gameComponents.boardComponents.gCell.list.HashMapPan
 import com.GameEngine.logic.gameComponents.boardComponents.gCell.list.ListGCell;
 import com.GameEngine.logic.gameComponents.boardComponents.gObject.GObject;
 import com.GameEngine.logic.gameComponents.gPanel.cell.GPanelCellFactory;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;

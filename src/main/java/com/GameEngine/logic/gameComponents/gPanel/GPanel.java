@@ -5,8 +5,8 @@ import com.GameEngine.logic.dynamicValues.DynamicParameter;
 import com.GameEngine.logic.dynamicValues.DynamicParameterMap;
 import com.GameEngine.logic.resources.ImageName;
 import com.GameEngine.logic.resources.manager.ResManager;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.*;
