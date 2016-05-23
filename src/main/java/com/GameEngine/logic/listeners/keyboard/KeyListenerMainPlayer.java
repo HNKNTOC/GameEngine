@@ -35,7 +35,7 @@ public class KeyListenerMainPlayer implements KeyListener {
 
         actionCommand.setParameters(CommandMoveDefault.NAME_PARAMETER_X, x + "");
         actionCommand.setParameters(CommandMoveDefault.NAME_PARAMETER_Y, y + "");
-        actionCommand.setParameters(CommandMoveDefault.NAME_PARAMETER_COMMAND_ENABLE, 1 + "");
+        actionCommand.setParameters(CommandMoveDefault.COMMAND_ENABLE, 1 + "");
 
         switch (e.getKeyCode()) {
             case KeyEvent.VK_UP:
@@ -51,7 +51,7 @@ public class KeyListenerMainPlayer implements KeyListener {
                 actionCommand.setParameters(CommandMoveDefault.NAME_PARAMETER_X, x + 1 + "");
                 break;
             default:
-                actionCommand.setParameters(CommandMoveDefault.NAME_PARAMETER_COMMAND_ENABLE, "0");
+                actionCommand.setParameters(CommandMoveDefault.COMMAND_ENABLE, "0");
         }
         actionCommand.execute();
     }

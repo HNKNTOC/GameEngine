@@ -9,9 +9,33 @@
         </layout>
     </appender>
 
+    <appender name="com.GameEngine.logic.action" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="log/action/log.txt"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="MaxBackupIndex" value="10"/>
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss.SSS} [%-5p][%-6.6t][%-20.20c{1}] - %m %n"/>
+        </layout>
+    </appender>
+
+    <appender name="logAll" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="log/all/all.txt"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="MaxBackupIndex" value="10"/>
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss.SSS} [%-5p][%-6.6t][%-20.20c{1}] - %m %n"/>
+        </layout>
+    </appender>
+
+    <logger name="com.GameEngine.logic.action">
+        <level value="INFO"/>
+        <appender-ref ref="com.GameEngine.logic.action"/>
+    </logger>
+
     <root>
-        <priority value="debug"/>
+        <priority value="DEBUG"/>
         <appender-ref ref="Console"/>
     </root>
-
 </log4j:configuration>

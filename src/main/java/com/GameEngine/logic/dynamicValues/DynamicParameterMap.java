@@ -14,7 +14,7 @@ public class DynamicParameterMap implements DynamicParameter {
 
     public DynamicParameterMap() {
         this.mapParameter = new HashMap<>();
-        logger.info("Create.");
+        logger.info("Create " + toString());
     }
 
     @Override
@@ -41,5 +41,12 @@ public class DynamicParameterMap implements DynamicParameter {
         int value = Integer.parseInt(mapParameter.get(name));
         logger.debug("Get paramInt Name:" + name + " value:" + value);
         return value;
+    }
+
+    @Override
+    public String toString() {
+        return "DynamicParameterMap{" +
+                "mapParameter=" + mapParameter +
+                '}';
     }
 }
