@@ -29,7 +29,11 @@ public class ReceiverGObject implements ReceiverAction {
     @Override
     public ActionCommand getActionCommand(int slot) {
         ActionCommand actionCommand = map.get(slot);
-        LOGGER.debug("getActionCommand slot = " + slot + " return " + actionCommand.toString());
+        if (actionCommand != null) {
+            LOGGER.debug("getActionCommand slot = " + slot + " return " + actionCommand.toString());
+        } else {
+            LOGGER.debug("getActionCommand slot = " + slot + " return null");
+        }
         return actionCommand;
     }
 
