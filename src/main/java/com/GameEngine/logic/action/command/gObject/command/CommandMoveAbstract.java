@@ -24,37 +24,18 @@ public abstract class CommandMoveAbstract extends CommandGObject {
      */
     public static final String NAME_PARAMETER_Y = "Y";
 
-    /**
-     * Объект который должен совершить действие.
-     */
-    private final GObject object;
-    /**
-     * Доска на которой содержится object.
-     */
-    private final GBoard board;
 
     /**
      * @param object object который должен совершить действие.
      * @param board  board на которой содержится object.
      */
     public CommandMoveAbstract(GObject object, GBoard board) {
-        this.object = object;
-        this.board = board;
+        super(object, board);
         maxX = board.getListGCell().getMaxX();
         maxY = board.getListGCell().getMaxY();
         addNewParameter(NAME_PARAMETER_X, 0 + "");
         addNewParameter(NAME_PARAMETER_Y, 0 + "");
         LOGGER.info("Create " + toString());
-    }
-
-    public GObject getObject() {
-        LOGGER.debug("getObject " + object.toString());
-        return object;
-    }
-
-    public GBoard getBoard() {
-        LOGGER.debug("getBoard " + board.toString());
-        return board;
     }
 
     @Override

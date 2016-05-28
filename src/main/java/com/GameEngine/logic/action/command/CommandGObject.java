@@ -1,5 +1,7 @@
 package com.GameEngine.logic.action.command;
 
+import com.GameEngine.logic.gameComponents.boardComponents.gBoard.GBoard;
+import com.GameEngine.logic.gameComponents.boardComponents.gObject.GObject;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -18,11 +20,31 @@ public abstract class CommandGObject implements ActionCommand {
      * Хранит имя параметра и его значение.
      */
     private HashMap<String, String> mapParameter;
+    /**
+     * Объект который должен совершить действие.
+     */
+    protected final GObject object;
+    /**
+     * Доска на которой содержится object.
+     */
+    protected final GBoard board;
 
-    public CommandGObject() {
+    public CommandGObject(GObject object, GBoard board) {
+        this.object = object;
+        this.board = board;
         mapParameter = new HashMap<>();
-        LOGGER.info("Create " + toString());
         addNewParameter(COMMAND_ENABLE, 1 + "");
+        LOGGER.info("Create " + toString());
+    }
+
+    public GObject getObject() {
+        LOGGER.debug("getObject " + object.toString());
+        return object;
+    }
+
+    public GBoard getBoard() {
+        LOGGER.debug("getBoard " + board.toString());
+        return board;
     }
 
     /**
@@ -72,5 +94,14 @@ public abstract class CommandGObject implements ActionCommand {
         }
         LOGGER.debug("setParameters not find nameParameters= " + nameParameters);
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return "CommandGObject{" +
+                "mapParameter=" + mapParameter +
+                ", object=" + object +
+                ", board=" + board +
+                '}';
     }
 }

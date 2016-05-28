@@ -11,7 +11,13 @@ import com.GameEngine.logic.gameComponents.gPanel.GPanel;
 public class GObject extends GComponentAbstract<GPanel> {
     private ReceiverAction receiverAction;
 
+    /**
+     * Кордината по оси X на которой находится GObject.
+     */
     private int x;
+    /**
+     * Кордината по оси Y на которой находится GObject.
+     */
     private int y;
 
     public GObject() {
