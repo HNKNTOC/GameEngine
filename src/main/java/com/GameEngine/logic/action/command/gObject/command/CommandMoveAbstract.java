@@ -85,7 +85,12 @@ public abstract class CommandMoveAbstract extends CommandGObject {
      * @return false если координата выходит за рамки поля.
      */
     protected boolean checkMaxX(int x) {
-        return x < maxX & x >= 0;
+        if (x < maxX & x >= 0) {
+            return true;
+        } else {
+            LOGGER.info("checkMaxX false for " + x);
+            return false;
+        }
     }
 
     /**
@@ -95,7 +100,12 @@ public abstract class CommandMoveAbstract extends CommandGObject {
      * @return false если координата выходит за рамки поля.
      */
     protected boolean checkMaxY(int y) {
-        return y < maxY & y >= 0;
+        if (y < maxY & y >= 0) {
+            return true;
+        } else {
+            LOGGER.info("checkMaxY false for " + y);
+            return false;
+        }
     }
 
     /**

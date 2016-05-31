@@ -2,7 +2,7 @@ package com.GameEngine.logic.gameComponents;
 
 import com.GameEngine.logic.dynamicValues.DynamicParameter;
 import com.GameEngine.logic.dynamicValues.DynamicParameterMap;
-import com.GameEngine.logic.gameComponents.generator.GeneratorId;
+import com.GameEngine.logic.id.GeneratorId;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -31,7 +31,7 @@ public abstract class GComponentAbstract<GPanel> implements GComponent<GPanel> {
      */
     public GComponentAbstract() {
         generateId();
-        this.mapParameter = new DynamicParameterMap();
+        this.mapParameter = new DynamicParameterMap(id);
         logger.info("Create " + this.toString());
     }
 

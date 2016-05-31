@@ -11,8 +11,13 @@ import java.util.HashMap;
 public class DynamicParameterMap implements DynamicParameter {
     private HashMap<String, String> mapParameter;
     private static final Logger logger = LogManager.getLogger(DynamicParameterMap.class);
+    /**
+     * Уникальный id.
+     */
+    private final int id;
 
-    public DynamicParameterMap() {
+    public DynamicParameterMap(int id) {
+        this.id = id;
         this.mapParameter = new HashMap<>();
         logger.info("Create " + toString());
     }
@@ -46,7 +51,8 @@ public class DynamicParameterMap implements DynamicParameter {
     @Override
     public String toString() {
         return "DynamicParameterMap{" +
-                "mapParameter=" + mapParameter +
+                "id=" + id +
+                ", mapParameter=" + mapParameter +
                 '}';
     }
 }

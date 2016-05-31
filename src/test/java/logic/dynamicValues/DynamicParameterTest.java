@@ -16,7 +16,7 @@ import static org.junit.Assert.assertTrue;
  */
 public class DynamicParameterTest {
 
-    private DynamicParameter dParam = new DynamicParameterMap();
+    private DynamicParameter dParam = new DynamicParameterMap(1);
 
 
     @Before

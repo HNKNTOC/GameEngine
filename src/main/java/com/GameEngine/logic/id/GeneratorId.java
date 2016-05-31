@@ -1,7 +1,7 @@
-package com.GameEngine.logic.gameComponents.generator;
+package com.GameEngine.logic.id;
 
 /**
- * Генирирует id.
+ * Генирирует id для GComponents.
  */
 public class GeneratorId {
     private static int ID;

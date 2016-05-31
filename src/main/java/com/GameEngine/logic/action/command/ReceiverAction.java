@@ -18,7 +18,7 @@ public interface ReceiverAction{
      * Возвращает ActionCommand.
      * @param slot номер слота в котором лежит ActionCommand.
      * @return ActionCommand соответствующий слоту
-     *  null если в слоте нет ActionCommand.
+     *  CommandDefault если в слоте нет ActionCommand.
      */
     ActionCommand getActionCommand(int slot);
 }

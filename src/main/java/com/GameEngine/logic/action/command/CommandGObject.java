@@ -37,8 +37,8 @@ public abstract class CommandGObject implements ActionCommand {
         LOGGER.info("Create " + toString());
     }
 
-    public GObject getObject() {
-        LOGGER.debug("getObject " + object.toString());
+    public GObject getGObject() {
+        LOGGER.debug("getGObject " + object.toString());
         return object;
     }
 

@@ -3,6 +3,7 @@ package com.GameEngine.logic.gameComponents.gPanel;
 import com.GameEngine.logic.dynamicValues.Dynamic;
 import com.GameEngine.logic.dynamicValues.DynamicParameter;
 import com.GameEngine.logic.dynamicValues.DynamicParameterMap;
+import com.GameEngine.logic.id.HasID;
 import com.GameEngine.logic.resources.ImageName;
 import com.GameEngine.logic.resources.manager.ResManager;
 import org.apache.log4j.LogManager;
@@ -15,20 +16,23 @@ import java.awt.*;
  * Супер класс для всех GPanel.
  * Настраивает JPanel для отрисовки GComponentAbstract.
  */
-public class GPanel extends JPanel implements Dynamic {
+public class GPanel extends JPanel implements Dynamic, HasID {
     private ImageIcon image;
     private static final Logger logger = LogManager.getLogger(GPanel.class);
 
     private DynamicParameter parameter;
+    /**
+     * Уникальный id.
+     */
+    private final int id;
 
-    public GPanel() {
-        this.parameter = new DynamicParameterMap();
-        this.image = ResManager.getResManager().getImageIcon(ImageName.NULL);
-        logger.info("Create "+this.toString());
+    public GPanel(int id) {
+        this(ResManager.getResManager().getImageIcon(ImageName.NULL), id);
     }
 
-    public GPanel(ImageIcon image) {
-        this.parameter = new DynamicParameterMap();
+    public GPanel(ImageIcon image, int id) {
+        this.id = id;
+        this.parameter = new DynamicParameterMap(this.id);
         this.image = image;
         logger.info("Create "+this.toString());
     }
@@ -62,7 +66,13 @@ public class GPanel extends JPanel implements Dynamic {
     @Override
     public String toString() {
         return "GPanel{" +
-                "image=" + image +
+                "id=" + id +
+                ", image=" + image +
                 '}';
+    }
+
+    @Override
+    public int getId() {
+        return id;
     }
 }

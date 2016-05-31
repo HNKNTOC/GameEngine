@@ -5,7 +5,7 @@ package com.GameEngine.logic.gameComponents.gPanel;
  */
 public class GPanelDefaultFactory implements GPanelFactory<GPanel> {
     @Override
-    public GPanel createGPanel() {
-        return new GPanel();
+    public GPanel createGPanel(int id) {
+        return new GPanel(id);
     }
 }

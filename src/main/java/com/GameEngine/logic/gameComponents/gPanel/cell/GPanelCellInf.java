@@ -11,7 +11,7 @@ import java.awt.*;
 public class GPanelCellInf extends GPanelCell {
     private GCell gCell;
     public GPanelCellInf(GCell gCell) {
-        super();
+        super(gCell.getId());
         this.gCell = gCell;
         getDynamicValues().putParameterInt("Color", 0);
     }

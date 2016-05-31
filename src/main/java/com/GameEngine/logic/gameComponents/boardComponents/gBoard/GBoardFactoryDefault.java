@@ -24,14 +24,14 @@ public class GBoardFactoryDefault implements GBoardFactory {
     @Override
     public GBoard createGBoard(int x, int y) {
         GBoard gBoard = new GBoard(x, y);
-        gBoard.setGPanel(factory.createGPanel());
+        gBoard.setGPanel(factory.createGPanel(gBoard.getId()));
         return gBoard;
     }
 
     @Override
     public GBoard createGBoard(ListGCell<GCell> listGCell) {
         GBoard gBoard = new GBoard(listGCell);
-        gBoard.setGPanel(factory.createGPanel());
+        gBoard.setGPanel(factory.createGPanel(gBoard.getId()));
         return gBoard;
     }
 }

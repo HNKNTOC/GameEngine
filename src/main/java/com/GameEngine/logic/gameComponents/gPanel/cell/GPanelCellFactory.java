@@ -8,7 +8,7 @@ import com.GameEngine.logic.gameComponents.gPanel.GPanelFactory;
  */
 public class GPanelCellFactory implements GPanelFactory<GPanelCell> {
     @Override
-    public GPanelCell createGPanel() {
-        return new GPanelCell();
+    public GPanelCell createGPanel(int id) {
+        return new GPanelCell(id);
     }
 }

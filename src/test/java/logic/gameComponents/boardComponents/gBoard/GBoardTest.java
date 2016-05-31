@@ -37,7 +37,7 @@ public class GBoardTest {
     @Test
     public void updateGCell(){
         GCellDefault gCell = new GCellDefault();
-        gCell.setGPanel(new GPanelCell());
+        gCell.setGPanel(new GPanelCell(gCell.getId()));
         gBoard.getListGCell().add(gCell);
         gBoard.updateGCell();
         assertTrue(gBoard.getGPanel().getComponent(0) == gCell.getGPanel());
@@ -58,7 +58,7 @@ public class GBoardTest {
 
     @Test
     public void setGPanel() {
-        GPanel gPanel = new GPanel();
+        GPanel gPanel = new GPanel(1);
         gBoard.setGPanel(gPanel);
         assertTrue(gBoard.getGPanel() == gPanel);
     }

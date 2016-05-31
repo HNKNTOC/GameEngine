@@ -33,8 +33,9 @@ public class GPanelCell extends GPanel implements Dynamic {
      */
     private DynamicParameterMap mapParameter;
 
-    public GPanelCell() {
-        this.mapParameter = new DynamicParameterMap();
+    public GPanelCell(int id) {
+        super(id);
+        this.mapParameter = new DynamicParameterMap(id);
         createDynamicParameter();
     }
 

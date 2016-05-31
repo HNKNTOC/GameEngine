@@ -3,7 +3,7 @@ package com.GameEngine.logic;
 import com.GameEngine.gui.Display;
 import com.GameEngine.gui.JDisplay;
 import com.GameEngine.logic.action.command.ReceiverAction;
-import com.GameEngine.logic.action.command.gObject.ReceiverGObject;
+import com.GameEngine.logic.action.command.ReceiverHashMap;
 import com.GameEngine.logic.action.command.gObject.command.CommandMoveDefault;
 import com.GameEngine.logic.gameComponents.boardComponents.gBoard.GBoard;
 import com.GameEngine.logic.gameComponents.boardComponents.gBoard.GBoardFactory;
@@ -63,7 +63,7 @@ public class MainStart {
         //Создание и настройка команды.
         CommandMoveDefault commandMoveDefault = new CommandMoveDefault(player, gBoard);
 
-        ReceiverAction receiver = new ReceiverGObject();
+        ReceiverAction receiver = new ReceiverHashMap();
         receiver.setActionCommand(commandMoveDefault, 0);
         player.setReceiverAction(receiver);
 

@@ -1,6 +1,7 @@
 package com.GameEngine.logic.gameComponents.boardComponents.gObject;
 
 import com.GameEngine.logic.action.command.ReceiverAction;
+import com.GameEngine.logic.action.command.ReceiverHashMap;
 import com.GameEngine.logic.gameComponents.GComponentAbstract;
 import com.GameEngine.logic.gameComponents.gPanel.GPanel;
 
@@ -21,7 +22,18 @@ public class GObject extends GComponentAbstract<GPanel> {
     private int y;
 
     public GObject() {
-        GPanel panel = new GPanel();
+        this(0, 0);
+    }
+
+    public GObject(int x, int y) {
+        this(x, y, new ReceiverHashMap());
+    }
+
+    public GObject(int x, int y, ReceiverAction receiverAction) {
+        this.receiverAction = receiverAction;
+        this.x = x;
+        this.y = y;
+        GPanel panel = new GPanel(getId());
         setGPanel(panel);
     }
 

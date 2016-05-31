@@ -1,20 +1,18 @@
-package com.GameEngine.logic.action.command.gObject;
+package com.GameEngine.logic.action.command;
 
-import com.GameEngine.logic.action.command.ActionCommand;
-import com.GameEngine.logic.action.command.ReceiverAction;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import java.util.HashMap;
 
 /**
- * Реализация для GObject.
+ * Реализация через HashMap.
  */
-public class ReceiverGObject implements ReceiverAction {
-    private static final Logger LOGGER = LogManager.getLogger(ReceiverGObject.class);
+public class ReceiverHashMap implements ReceiverAction {
+    private static final Logger LOGGER = LogManager.getLogger(ReceiverHashMap.class);
     private HashMap<Integer,ActionCommand> map;
 
-    public ReceiverGObject() {
+    public ReceiverHashMap() {
         map = new HashMap<>();
         LOGGER.info("Create " + toString());
     }
@@ -32,14 +30,15 @@ public class ReceiverGObject implements ReceiverAction {
         if (actionCommand != null) {
             LOGGER.debug("getActionCommand slot = " + slot + " return " + actionCommand.toString());
         } else {
-            LOGGER.debug("getActionCommand slot = " + slot + " return null");
+            LOGGER.info("getActionCommand slot = " + slot + " return CommandDefault");
+            actionCommand = new CommandDefault();
         }
         return actionCommand;
     }
 
     @Override
     public String toString() {
-        return "ReceiverGObject{" +
+        return "ReceiverHashMap{" +
                 "map=" + map +
                 '}';
     }

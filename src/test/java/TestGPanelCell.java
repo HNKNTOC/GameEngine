@@ -20,7 +20,7 @@ public class TestGPanelCell {
         resManager.putImageIcon(ImageLoader.getImage("player.png"));
 
         GCellDefault cell = new GCellDefault();
-        cell.setGPanel(new GPanelCell());
+        cell.setGPanel(new GPanelCell(cell.getId()));
         cell.getGPanel().setImageIcon(ImageLoader.getImage("grass.jpg"));
 
         GObject player = new GObject();
