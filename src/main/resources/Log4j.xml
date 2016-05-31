@@ -19,8 +19,8 @@
         </layout>
     </appender>
 
-    <appender name="logAll" class="org.apache.log4j.RollingFileAppender">
-        <param name="File" value="log/all/all.txt"/>
+    <appender name="com.GameEngine.logic.dynamicValues" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="log/dynamicValues/log.txt"/>
         <param name="MaxFileSize" value="100MB"/>
         <param name="MaxBackupIndex" value="10"/>
         <param name="Encoding" value="UTF-8"/>
@@ -29,9 +29,29 @@
         </layout>
     </appender>
 
+    <appender name="com.GameEngine.logic.gameComponents" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="log/gameComponents/log.txt"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="MaxBackupIndex" value="10"/>
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss.SSS} [%-5p][%-6.6t][%-20.20c{1}] - %m %n"/>
+        </layout>
+    </appender>
+
+    <logger name="com.GameEngine.logic.gameComponents">
+        <level value="DEBUG"/>
+        <appender-ref ref="com.GameEngine.logic.gameComponents"/>
+    </logger>
+
     <logger name="com.GameEngine.logic.action">
-        <level value="INFO"/>
+        <level value="DEBUG"/>
         <appender-ref ref="com.GameEngine.logic.action"/>
+    </logger>
+
+    <logger name="com.GameEngine.logic.dynamicValues">
+        <level value="DEBUG"/>
+        <appender-ref ref="com.GameEngine.logic.dynamicValues"/>
     </logger>
 
     <root>
