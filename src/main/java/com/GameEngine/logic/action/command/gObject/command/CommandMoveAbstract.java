@@ -33,8 +33,8 @@ public abstract class CommandMoveAbstract extends CommandGObject {
         super(object, board);
         maxX = board.getListGCell().getMaxX();
         maxY = board.getListGCell().getMaxY();
-        addNewParameter(NAME_PARAMETER_X, 0 + "");
-        addNewParameter(NAME_PARAMETER_Y, 0 + "");
+        dynamicParameter.putParameterInt(NAME_PARAMETER_X, 0);
+        dynamicParameter.putParameterInt(NAME_PARAMETER_Y, 0);
         LOGGER.info("Create " + toString());
     }
 
@@ -46,8 +46,8 @@ public abstract class CommandMoveAbstract extends CommandGObject {
         }
         final int oldX = object.getX();
         final int oldY = object.getY();
-        int x = Integer.parseInt(getValue(NAME_PARAMETER_X));
-        int y = Integer.parseInt(getValue(NAME_PARAMETER_Y));
+        int x = dynamicParameter.getParameterInt(NAME_PARAMETER_X);
+        int y = dynamicParameter.getParameterInt(NAME_PARAMETER_Y);
 
         if (!(check(x, y) & checkMaxX(x) & checkMaxY(y))) {
             LOGGER.debug("execute excess max x or y return false!");

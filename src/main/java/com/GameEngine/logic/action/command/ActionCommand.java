@@ -1,21 +1,14 @@
 package com.GameEngine.logic.action.command;
 
+import com.GameEngine.logic.dynamicValues.Dynamic;
+
 /**
  * Интервейс для всех команд.
  * Интерфейс предназначен для инкапсуляции запроса на выполнения команды.
  */
-public interface ActionCommand {
+public interface ActionCommand extends Dynamic {
     /**
      * Выполнить команду.
      */
     boolean execute();
-
-    /**
-     * Задать параметры для команды.
-     * @param nameParameters имя параметра.
-     * @param value значение параметра.
-     * @return true если параметр был задан успешно.
-     *         false если параметр был не найден или неверно задано значение параметра.
-     */
-    boolean setParameters(String nameParameters,String value);
 }

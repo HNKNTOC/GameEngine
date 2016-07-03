@@ -1,16 +1,17 @@
 package com.GameEngine.logic.action.command;
 
+import com.GameEngine.logic.dynamicValues.DynamicParameter;
+import com.GameEngine.logic.dynamicValues.DynamicParameterMap;
 import com.GameEngine.logic.gameComponents.boardComponents.gBoard.GBoard;
 import com.GameEngine.logic.gameComponents.boardComponents.gObject.GObject;
+import com.GameEngine.logic.id.HasID;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-
-import java.util.HashMap;
 
 /**
  * Базовый класс для всех CommandGObject.
  */
-public abstract class CommandGObject implements ActionCommand {
+public abstract class CommandGObject implements ActionCommand, HasID {
     private static final Logger LOGGER = LogManager.getLogger(CommandGObject.class);
     /**
      * Имя параметра. Если параметр содержит 0 команда не выполняется.
@@ -19,7 +20,7 @@ public abstract class CommandGObject implements ActionCommand {
     /**
      * Хранит имя параметра и его значение.
      */
-    private HashMap<String, String> mapParameter;
+    protected DynamicParameterMap dynamicParameter;
     /**
      * Объект который должен совершить действие.
      */
@@ -32,8 +33,8 @@ public abstract class CommandGObject implements ActionCommand {
     public CommandGObject(GObject object, GBoard board) {
         this.object = object;
         this.board = board;
-        mapParameter = new HashMap<>();
-        addNewParameter(COMMAND_ENABLE, 1 + "");
+        dynamicParameter = new DynamicParameterMap(getId());
+        dynamicParameter.putParameterInt(COMMAND_ENABLE, 1);
         LOGGER.info("Create " + toString());
     }
 
@@ -63,45 +64,28 @@ public abstract class CommandGObject implements ActionCommand {
      * @return false если нет true если да.
      */
     private boolean checkEnable() {
-        int enable = Integer.parseInt(getValue(COMMAND_ENABLE));
-        LOGGER.debug("checkEnable COMMAND_ENABLE= " + COMMAND_ENABLE);
+        int enable = dynamicParameter.getParameterInt(COMMAND_ENABLE);
+        LOGGER.debug("checkEnable COMMAND_ENABLE= " + enable);
         return enable != 0;
     }
 
-    /**
-     * Добавляет новый параметр для команды.
-     *
-     * @return true если параметр был удачно добавлен.
-     */
-    protected boolean addNewParameter(String nameParameters, String valueDefault) {
-        LOGGER.debug("addNewParameter nameParameters = " + nameParameters + " valueDefault = " + valueDefault);
-        mapParameter.put(nameParameters, valueDefault);
-        return true;
-    }
-
-    protected String getValue(String nameParameters) {
-        String value = mapParameter.get(nameParameters);
-        LOGGER.debug("getValue nameParameters = " + nameParameters + " return = " + value);
-        return value;
+    @Override
+    public int getId() {
+        return getGObject().getId();
     }
 
     @Override
-    public boolean setParameters(String nameParameters, String value) {
-        if (mapParameter.containsKey(nameParameters)) {
-            LOGGER.debug("setParameters nameParameters = " + nameParameters + " value = " + value);
-            mapParameter.put(nameParameters, value);
-            return true;
-        }
-        LOGGER.debug("setParameters not find nameParameters= " + nameParameters);
-        return false;
+    public DynamicParameter getDynamicValues() {
+        return dynamicParameter;
     }
 
     @Override
     public String toString() {
         return "CommandGObject{" +
-                "mapParameter=" + mapParameter +
+                "dynamicParameter=" + dynamicParameter +
                 ", object=" + object +
                 ", board=" + board +
+                ", id=" + getId() +
                 '}';
     }
 }

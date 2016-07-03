@@ -33,25 +33,25 @@ public class KeyListenerMainPlayer implements KeyListener {
         int x = gObject.getX();
         int y = gObject.getY();
 
-        actionCommand.setParameters(CommandMoveDefault.NAME_PARAMETER_X, x + "");
-        actionCommand.setParameters(CommandMoveDefault.NAME_PARAMETER_Y, y + "");
-        actionCommand.setParameters(CommandMoveDefault.COMMAND_ENABLE, 1 + "");
+        actionCommand.getDynamicValues().putParameterInt(CommandMoveDefault.NAME_PARAMETER_X, x);
+        actionCommand.getDynamicValues().putParameterInt(CommandMoveDefault.NAME_PARAMETER_Y, y);
+        actionCommand.getDynamicValues().putParameterInt(CommandMoveDefault.COMMAND_ENABLE, 1);
 
         switch (e.getKeyCode()) {
             case KeyEvent.VK_UP:
-                actionCommand.setParameters(CommandMoveDefault.NAME_PARAMETER_Y, y - 1 + "");
+                actionCommand.getDynamicValues().putParameterInt(CommandMoveDefault.NAME_PARAMETER_Y, y - 1);
                 break;
             case KeyEvent.VK_DOWN:
-                actionCommand.setParameters(CommandMoveDefault.NAME_PARAMETER_Y, y + 1 + "");
+                actionCommand.getDynamicValues().putParameterInt(CommandMoveDefault.NAME_PARAMETER_Y, y + 1);
                 break;
             case KeyEvent.VK_LEFT:
-                actionCommand.setParameters(CommandMoveDefault.NAME_PARAMETER_X, x - 1 + "");
+                actionCommand.getDynamicValues().putParameterInt(CommandMoveDefault.NAME_PARAMETER_X, x - 1);
                 break;
             case KeyEvent.VK_RIGHT:
-                actionCommand.setParameters(CommandMoveDefault.NAME_PARAMETER_X, x + 1 + "");
+                actionCommand.getDynamicValues().putParameterInt(CommandMoveDefault.NAME_PARAMETER_X, x + 1);
                 break;
             default:
-                actionCommand.setParameters(CommandMoveDefault.COMMAND_ENABLE, "0");
+                actionCommand.getDynamicValues().putParameterInt(CommandMoveDefault.COMMAND_ENABLE, 0);
         }
         actionCommand.execute();
     }

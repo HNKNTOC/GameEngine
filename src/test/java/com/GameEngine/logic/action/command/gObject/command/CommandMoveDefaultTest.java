@@ -59,8 +59,8 @@ public class CommandMoveDefaultTest {
     public void executeAndSetParameters() {
         int oldX = gObject.getX();
         int oldY = gObject.getY();
-        command.setParameters(CommandMoveAbstract.NAME_PARAMETER_X, randomX + "");
-        command.setParameters(CommandMoveAbstract.NAME_PARAMETER_Y, randomY + "");
+        command.getDynamicValues().putParameterInt(CommandMoveAbstract.NAME_PARAMETER_X, randomX);
+        command.getDynamicValues().putParameterInt(CommandMoveAbstract.NAME_PARAMETER_Y, randomY);
         command.execute();
 
         assertTrue(checkMoving(randomX, randomY, oldX, oldY));

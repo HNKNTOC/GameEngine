@@ -1,5 +1,7 @@
 package com.GameEngine.logic.action.command;
 
+import com.GameEngine.logic.dynamicValues.DynamicParameter;
+import com.GameEngine.logic.dynamicValues.DynamicParameterMap;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -21,8 +23,8 @@ public class CommandDefault implements ActionCommand {
     }
 
     @Override
-    public boolean setParameters(String nameParameters, String value) {
-        LOGGER.warn("setParameters nameParameters = " + nameParameters + " value = " + value + " was caused by the CommandDefault !!");
-        return false;
+    public DynamicParameter getDynamicValues() {
+        LOGGER.warn("execute was caused by the CommandDefault !!");
+        return new DynamicParameterMap(0);
     }
 }
