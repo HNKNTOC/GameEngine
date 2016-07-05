@@ -1,7 +1,7 @@
 package logic.dynamicValues;
 
-import com.GameEngine.logic.dynamicValues.DynamicParameter;
-import com.GameEngine.logic.dynamicValues.DynamicParameterMap;
+import com.GameEngine.logic.game.dynamicValues.DynamicParameter;
+import com.GameEngine.logic.game.dynamicValues.DynamicParameterMap;
 import org.junit.Before;
 import org.junit.Test;
 

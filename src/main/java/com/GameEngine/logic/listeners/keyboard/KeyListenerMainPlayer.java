@@ -1,9 +1,9 @@
 package com.GameEngine.logic.listeners.keyboard;
 
 
-import com.GameEngine.logic.action.command.ActionCommand;
-import com.GameEngine.logic.action.command.gObject.command.CommandMoveDefault;
-import com.GameEngine.logic.gameComponents.boardComponents.gObject.GObject;
+import com.GameEngine.logic.game.action.command.ActionCommand;
+import com.GameEngine.logic.game.action.command.gObject.command.CommandMoveDefault;
+import com.GameEngine.logic.game.components.gObject.GObject;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 

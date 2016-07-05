@@ -9,7 +9,7 @@
         </layout>
     </appender>
 
-    <appender name="com.GameEngine.logic.action" class="org.apache.log4j.RollingFileAppender">
+    <appender name="com.GameEngine.logic.game.action" class="org.apache.log4j.RollingFileAppender">
         <param name="File" value="log/action/log.txt"/>
         <param name="MaxFileSize" value="100MB"/>
         <param name="MaxBackupIndex" value="10"/>
@@ -19,7 +19,7 @@
         </layout>
     </appender>
 
-    <appender name="com.GameEngine.logic.dynamicValues" class="org.apache.log4j.RollingFileAppender">
+    <appender name="com.GameEngine.logic.game.dynamicValues" class="org.apache.log4j.RollingFileAppender">
         <param name="File" value="log/dynamicValues/log.txt"/>
         <param name="MaxFileSize" value="100MB"/>
         <param name="MaxBackupIndex" value="10"/>
@@ -44,14 +44,14 @@
         <appender-ref ref="com.GameEngine.logic.gameComponents"/>
     </logger>
 
-    <logger name="com.GameEngine.logic.action">
+    <logger name="com.GameEngine.logic.game.action">
         <level value="DEBUG"/>
-        <appender-ref ref="com.GameEngine.logic.action"/>
+        <appender-ref ref="com.GameEngine.logic.game.action"/>
     </logger>
 
-    <logger name="com.GameEngine.logic.dynamicValues">
+    <logger name="com.GameEngine.logic.game.dynamicValues">
         <level value="DEBUG"/>
-        <appender-ref ref="com.GameEngine.logic.dynamicValues"/>
+        <appender-ref ref="com.GameEngine.logic.game.dynamicValues"/>
     </logger>
 
     <root>

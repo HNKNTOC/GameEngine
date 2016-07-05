@@ -1,7 +1,7 @@
 package com.GameEngine.logic;
 
-import com.GameEngine.logic.coordinate.Coordinate;
-import com.GameEngine.logic.coordinate.CoordinatePars;
+import com.GameEngine.logic.game.coordinate.Coordinate;
+import com.GameEngine.logic.game.coordinate.CoordinatePars;
 import org.junit.Before;
 import org.junit.Test;
 

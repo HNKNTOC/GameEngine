@@ -1,7 +1,7 @@
 import com.GameEngine.gui.JDisplay;
-import com.GameEngine.logic.gameComponents.boardComponents.gCell.GCellDefault;
-import com.GameEngine.logic.gameComponents.boardComponents.gObject.GObject;
-import com.GameEngine.logic.gameComponents.gPanel.cell.GPanelCell;
+import com.GameEngine.gui.gPanel.cell.GPanelCell;
+import com.GameEngine.logic.game.components.gCell.GCellDefault;
+import com.GameEngine.logic.game.components.gObject.GObject;
 import com.GameEngine.logic.resources.loader.image.ImageLoader;
 import com.GameEngine.logic.resources.manager.ResManager;
 
