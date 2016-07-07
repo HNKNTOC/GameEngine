@@ -36,7 +36,7 @@ public class DynamicParameterMap implements DynamicParameter {
     }
 
     @Override
-    public void putParameterInt(String name, int value) throws NumberFormatException {
+    public void putParameterInt(String name, int value) {
         putParameter(name, value + "");
     }
 
@@ -48,14 +48,14 @@ public class DynamicParameterMap implements DynamicParameter {
     }
 
     @Override
-    public boolean getParameterBoolean(String name) throws NumberFormatException {
+    public boolean getParameterBoolean(String name) {
         boolean value = Boolean.parseBoolean(mapParameter.get(name));
         logger.debug("getParameterBoolean return Name:" + name + " value:" + value);
         return value;
     }
 
     @Override
-    public void putParameterBoolean(String name, boolean value) throws NumberFormatException {
+    public void putParameterBoolean(String name, boolean value) {
         putParameter(name, value + "");
     }
 

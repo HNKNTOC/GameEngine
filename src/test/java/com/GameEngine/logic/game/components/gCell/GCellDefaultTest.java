@@ -1,8 +1,6 @@
-package logic.gameComponents.boardComponents.gCell;
+package com.GameEngine.logic.game.components.gCell;
 
 import com.GameEngine.gui.gPanel.cell.GPanelCellFactory;
-import com.GameEngine.logic.game.components.gCell.GCell;
-import com.GameEngine.logic.game.components.gCell.GCellFactoryDefault;
 import com.GameEngine.logic.game.components.gObject.GObject;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,10 +8,11 @@ import org.junit.Test;
 import java.util.Random;
 
 import static org.junit.Assert.assertTrue;
+
 /**
  * Тест для GCell.
  */
-public class GCellTest {
+public class GCellDefaultTest {
 
     private GCell cell = new GCellFactoryDefault(new GPanelCellFactory()).createGCell();
     private int x = new Random().nextInt(500);

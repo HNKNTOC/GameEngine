@@ -15,8 +15,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.util.Random;
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -25,10 +23,10 @@ import static org.junit.Assert.assertTrue;
  */
 public class CommandMoveDefaultTest {
 
-    private static int maxY;
-    private static int maxX;
-    private static int randomX;
-    private static int randomY;
+    private static final int MAX_Y = 20;
+    private static final int MAX_X = 25;
+    private static final int X = 15;
+    private static final int Y = 17;
     private static GBoard gBoard;
     private static GObject gObject;
     private static CommandMoveGObject command;
@@ -36,12 +34,10 @@ public class CommandMoveDefaultTest {
 
     @BeforeClass
     public static void setUpClass() {
-        maxY = getRandom(19) + 2;
-        maxX = getRandom(19) + 2;
-        logger.info("maxX=" + maxX + " maxY=" + maxY);
+        logger.info("maxX=" + MAX_X + " maxY=" + MAX_Y);
         GCellFactory GCellFactory = new GCellFactoryDefault(new GPanelCellFactory());
-        ListGCell<GCell> listGCell = new HashMapPanelGCell(maxX, maxY);
-        for (GCell gCell : GCellFactory.createGCell(maxX * maxY)) {
+        ListGCell<GCell> listGCell = new HashMapPanelGCell(MAX_X, MAX_Y);
+        for (GCell gCell : GCellFactory.createGCell(MAX_X * MAX_Y)) {
             listGCell.add(gCell);
         }
         gBoard = new GBoardFactoryDefault().createGBoard(listGCell);
@@ -51,20 +47,18 @@ public class CommandMoveDefaultTest {
 
     @Before
     public void setUp() {
-        randomX = getRandom(maxX - 1);
-        randomY = getRandom(maxY - 1);
-        logger.info("randomX=" + randomX + " randomY=" + randomY);
+        logger.info("X=" + X + " Y=" + Y);
     }
 
     @Test
     public void executeAndSetParameters() {
         int oldX = gObject.getX();
         int oldY = gObject.getY();
-        command.getDynamicValues().putParameterInt(CommandMoveGObject.NAME_PARAMETER_X, randomX);
-        command.getDynamicValues().putParameterInt(CommandMoveGObject.NAME_PARAMETER_Y, randomY);
+        command.getDynamicValues().putParameterInt(CommandMoveGObject.NAME_PARAMETER_X, X);
+        command.getDynamicValues().putParameterInt(CommandMoveGObject.NAME_PARAMETER_Y, Y);
         command.execute();
 
-        assertTrue(checkMoving(randomX, randomY, oldX, oldY));
+        assertTrue(checkMoving(X, Y, oldX, oldY));
     }
 
 
@@ -73,21 +67,21 @@ public class CommandMoveDefaultTest {
         int oldX = gObject.getX();
         int oldY = gObject.getY();
 
-        command.move(randomX, randomY, gObject.getX(), gObject.getY());
-        assertTrue(checkMoving(randomX, randomY, oldX, oldY));
+        command.move(X, Y, gObject.getX(), gObject.getY());
+        assertTrue(checkMoving(X, Y, oldX, oldY));
     }
 
     @Test
     public void checkMaxX() {
-        assertTrue(command.checkMaxX(maxX - 1));
-        assertFalse(command.checkMaxX(maxX + 1));
+        assertTrue(command.checkMaxX(MAX_X - 1));
+        assertFalse(command.checkMaxX(MAX_X + 1));
         assertFalse(command.checkMaxX(-1));
     }
 
     @Test
     public void checkMaxY() {
-        assertTrue(command.checkMaxY(maxY - 1));
-        assertFalse(command.checkMaxY(maxY + 1));
+        assertTrue(command.checkMaxY(MAX_Y - 1));
+        assertFalse(command.checkMaxY(MAX_Y + 1));
         assertFalse(command.checkMaxY(-1));
     }
 
@@ -110,9 +104,4 @@ public class CommandMoveDefaultTest {
         }
         return true;
     }
-
-    private static int getRandom(int bound) {
-        return new Random().nextInt(bound);
-    }
-
 }

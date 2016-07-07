@@ -2,7 +2,7 @@ package com.GameEngine.logic.game.components.gCell;
 
 
 /**
- * Базовый класс для всех клеток.
+ * Стандартная реализация GCell.
  */
 public class GCellDefault extends GCellAbstract {
     @Override

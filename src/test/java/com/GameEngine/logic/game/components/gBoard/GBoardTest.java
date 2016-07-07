@@ -1,10 +1,8 @@
-package logic.gameComponents.boardComponents.gBoard;
+package com.GameEngine.logic.game.components.gBoard;
 
 import com.GameEngine.gui.gPanel.GPanel;
 import com.GameEngine.gui.gPanel.GPanelDefaultFactory;
 import com.GameEngine.gui.gPanel.cell.GPanelCell;
-import com.GameEngine.logic.game.components.gBoard.GBoard;
-import com.GameEngine.logic.game.components.gBoard.GBoardFactoryDefault;
 import com.GameEngine.logic.game.components.gCell.GCellDefault;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -13,13 +11,13 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Тест для GBoard.
+ * Тест функционала GBoard.
  */
 public class GBoardTest {
 
     private static GBoard gBoard;
-    private static final int x = (int) (Math.random()*30);
-    private static final int y = (int) (Math.random()*30);
+    private static final int x = (int) (Math.random() * 30);
+    private static final int y = (int) (Math.random() * 30);
 
     @BeforeClass
     public static void set() {
@@ -30,12 +28,12 @@ public class GBoardTest {
      * Проверка правильного создания ListGCell в GBoard
      */
     @Test
-    public void getListGCell(){
-        assertTrue(gBoard.getListGCell()!= null);
+    public void getListGCell() {
+        assertTrue(gBoard.getListGCell() != null);
     }
 
     @Test
-    public void updateGCell(){
+    public void updateGCell() {
         GCellDefault gCell = new GCellDefault();
         gCell.setGPanel(new GPanelCell(gCell.getId()));
         gBoard.getListGCell().add(gCell);
@@ -48,7 +46,7 @@ public class GBoardTest {
      */
     @Test
     public void getId() {
-        assertTrue(gBoard.getId()==gBoard.hashCode());
+        assertTrue(gBoard.getId() == gBoard.hashCode());
     }
 
     @Test
@@ -62,4 +60,5 @@ public class GBoardTest {
         gBoard.setGPanel(gPanel);
         assertTrue(gBoard.getGPanel() == gPanel);
     }
+
 }
